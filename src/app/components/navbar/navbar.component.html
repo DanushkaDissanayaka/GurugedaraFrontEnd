@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute fixed-top">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse justify-content-end" id="navigation">
+
+            <!-- Navebar dropdown-->
+            <ul class="navbar-nav">
+                <!-- Message Icon -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link" id="messageDropDown" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        <i class="material-icons">message</i>
+                        <span class="notification">{{messageNumber}}</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messageDropDown">
+                        <a class="dropdown-item" href="#" *ngFor="let el of msg">{{el.title}}</a>
+                    </div>
+                </li>
+                <!-- Notification Icon -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link" id="notificationDropdown" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        <i class="material-icons">notifications</i>
+                        <span class="notification">{{notificationNumber}}</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notificationDropdown">
+                        <a class="dropdown-item" href="#" *ngFor="let el of notifications">{{el.title}}</a>
+                    </div>
+                </li>
+                
+                <!-- Logout Icon -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#" (click)='logout()'>
+                        <i class="material-icons">person</i>
+                        <p>
+                            <span class="d-lg-none d-md-block">Account</span>
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

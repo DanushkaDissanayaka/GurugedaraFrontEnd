@@ -1,0 +1,82 @@
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-20 col-md-12">
+          <div class="card">
+            <div class="card-header card-header-tabs card-header-primary">
+              <div class="nav-tabs-navigation">
+                <div class="nav-tabs-wrapper">
+                  <span class="nav-tabs-title">Notification</span>
+                  <ul class="nav nav-tabs" data-tabs="tabs">
+                    <li class="nav-item">
+                      
+                    </li>
+                    
+                    
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="tab-content">
+                
+                  <form (submit)="register()">
+                      <div class="row">
+                          <div class="col-md-4">
+                              <div class="btn-group">
+                                  <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">ClassId</button>
+                                
+                                  <div class="dropdown-menu">
+                                    <a class="dropdown-item"  (click)="setDropDwonName(2010)">2010</a>
+                                   
+                                    
+                                  </div>
+                              </div>
+                          </div>
+                        
+                        
+                        
+                            <div class="col-md-4">
+                                <div class="btn-group">
+                                    <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                      aria-expanded="false">TypeId</button>
+                                  
+                                    <div class="dropdown-menu">
+                                      <a class="dropdown-item"  (click)="setDropDwonName(2010)">2010</a>
+                                     
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+<br>
+<br>
+                      
+
+                    
+                    <div class="col">
+                      <div class="col-md-6">
+                        <mat-form-field class="example-full-width">
+                          <input matInput placeholder="Title" name="Title" [(ngModel)]="Text" type="password" type="password">
+                        </mat-form-field>
+                      </div>
+                      <div class="col-md-6">
+                        <mat-form-field class="example-full-width">
+                            <textarea matInput name="Message" [(ngModel)]="Message" type="text" placeholder="Text here" cols="10" rows="3"></textarea>
+                        </mat-form-field>
+                        
+                      </div>
+                    </div>
+                    
+                    <button mat-raised-button type="submit" class="btn btn-danger pull-right">Send</button>
+                    <div class="clearfix"></div>
+                  </form> 
+
+              
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     

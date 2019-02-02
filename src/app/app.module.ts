@@ -22,6 +22,7 @@ import { StudentComponent } from './register-user/student/student.component';
 import { TeacherComponent } from './register-user/teacher/teacher.component';
 import { OfficeUserComponent } from './register-user/office-user/office-user.component';
 import { AdminComponent } from './register-user/admin/admin.component';
+import { AddNotificationComponent } from './add-notification/add-notification.component';
 
 @NgModule({
   imports: [
@@ -38,6 +39,7 @@ import { AdminComponent } from './register-user/admin/admin.component';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

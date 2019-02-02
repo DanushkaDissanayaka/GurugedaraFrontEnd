@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { map } from 'rxjs/operators';
 
-const hostAddress = "http://localhost:3000"//"http://localhost:3000" 
+const hostAddress = "http://139.59.66.58:3000"//"http://localhost:3000" 
 
 @Injectable({
   providedIn: 'root'

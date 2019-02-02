@@ -23,40 +23,36 @@
                   <form (submit)="register()">
                       <div class="row">
                           <div class="col-md-4">
-                            <label for="">Class Id</label>
-                            <select matInput placeholder="ClassId"  name="ClassId" [(ngModel)]="ClassId" class="browser-default custom-select"><br>
-                              <option value="">Select ClassId</option>
-                              <option value="officeuser">Office user</option>
-                              <option value="teacher">Teacher</option>
-                            </select>
+                              <div class="btn-group">
+                                  <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">ClassId</button>
+                                
+                                  <div class="dropdown-menu">
+                                    <a class="dropdown-item"  (click)="setDropDwonName(2010)">2010</a>
+                                   
+                                    
+                                  </div>
+                              </div>
                           </div>
                         
                         
                         
                             <div class="col-md-4">
-                                <label for="">Type Id</label>
-                              <select  name="Type" [(ngModel)]="Type" class="browser-default custom-select"><br>
-                                <option value="">Select TypeId</option>
-                                <option value="officeuser">Office user</option>
-                                <option value="teacher">Teacher</option>
-                              </select>
+                                <div class="btn-group">
+                                    <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                      aria-expanded="false">TypeId</button>
+                                  
+                                    <div class="dropdown-menu">
+                                      <a class="dropdown-item"  (click)="setDropDwonName(2010)">2010</a>
+                                     
+                                      
+                                    </div>
+                                </div>
                             </div>
                           </div>
 <br>
 <br>
-                          <div class="row">
-                              <div class="col-md-3">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Birth Day" name="DOB" [(ngModel)]="DOB" type="date">
-                                </mat-form-field>
-                              </div>
-                              <div class="col-md-4">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Email Address" name="email" [(ngModel)]="email" type="time">
-                                </mat-form-field>
-                              </div>
-                             
-                            </div>
+                      
 
                     
                     <div class="col">

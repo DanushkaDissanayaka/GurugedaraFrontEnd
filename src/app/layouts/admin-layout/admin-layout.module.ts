@@ -24,6 +24,9 @@ import { AddsubjectComponent } from '../../class-coordination/addsubject/addsubj
 import { MarksComponent } from '../../marks/marks.component';
 import { AttendanceComponent } from '../../attendance/attendance.component';
 import { PaymentsComponent } from '../../payments/payments.component';
+import { AddmarksComponent } from '../../marks/addmarks/addmarks.component';
+import { ViewmarksComponent } from '../../marks/viewmarks/viewmarks.component';
+
 
 import {
   MatButtonModule,
@@ -67,6 +70,8 @@ import {
     MarksComponent,
     AttendanceComponent,
     PaymentsComponent,
+    AddmarksComponent,
+    ViewmarksComponent,
   ]
 })
 

@@ -1,0 +1,86 @@
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-20 col-md-12">
+          <div class="card">
+            <div class="card-header card-header-tabs card-header-primary">
+              <div class="nav-tabs-navigation">
+                <div class="nav-tabs-wrapper">
+                  <span class="nav-tabs-title">Notification</span>
+                  <ul class="nav nav-tabs" data-tabs="tabs">
+                    <li class="nav-item">
+                      
+                    </li>
+                    
+                    
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="tab-content">
+                
+                  <form (submit)="register()">
+                      <div class="row">
+                          <div class="col-md-4">
+                            <label for="">Class Id</label>
+                            <select matInput placeholder="ClassId"  name="ClassId" [(ngModel)]="ClassId" class="browser-default custom-select"><br>
+                              <option value="">Select ClassId</option>
+                              <option value="officeuser">Office user</option>
+                              <option value="teacher">Teacher</option>
+                            </select>
+                          </div>
+                        
+                        
+                        
+                            <div class="col-md-4">
+                                <label for="">Type Id</label>
+                              <select  name="Type" [(ngModel)]="Type" class="browser-default custom-select"><br>
+                                <option value="">Select TypeId</option>
+                                <option value="officeuser">Office user</option>
+                                <option value="teacher">Teacher</option>
+                              </select>
+                            </div>
+                          </div>
+<br>
+<br>
+                          <div class="row">
+                              <div class="col-md-3">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Birth Day" name="DOB" [(ngModel)]="DOB" type="date">
+                                </mat-form-field>
+                              </div>
+                              <div class="col-md-4">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Email Address" name="email" [(ngModel)]="email" type="time">
+                                </mat-form-field>
+                              </div>
+                             
+                            </div>
+
+                    
+                    <div class="col">
+                      <div class="col-md-6">
+                        <mat-form-field class="example-full-width">
+                          <input matInput placeholder="Title" name="Title" [(ngModel)]="Text" type="password" type="password">
+                        </mat-form-field>
+                      </div>
+                      <div class="col-md-6">
+                        <mat-form-field class="example-full-width">
+                            <textarea matInput name="Message" [(ngModel)]="Message" type="text" placeholder="Text here" cols="10" rows="3"></textarea>
+                        </mat-form-field>
+                        
+                      </div>
+                    </div>
+                    
+                    <button mat-raised-button type="submit" class="btn btn-danger pull-right">Send</button>
+                    <div class="clearfix"></div>
+                  </form> 
+
+              
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     

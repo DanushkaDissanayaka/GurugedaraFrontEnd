@@ -13,10 +13,17 @@ export class ClassService {
 
   constructor(private http:Http) { }
 
-  getclasses(){
+  getClasses(){
     let headers = new Headers();
     headers.append('Cotent-type','application/json');
     return this.http.get(hostAddress +'/class/getClassDetails',{headers: headers})
+    .pipe(map(res => res.json()));
+  }
+
+  getStudentsForClass(ClassId){
+    let headers = new Headers();
+    headers.append('Cotent-type','application/json');
+    return this.http.get(hostAddress +'/class/getAllstudentDetailsOfAclass',{headers: headers})
     .pipe(map(res => res.json()));
   }
 }

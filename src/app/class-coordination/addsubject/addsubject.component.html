@@ -1,3 +1,33 @@
-<p>
-  addsubject works!
-</p>
+<form (submit)="addSubject()">
+  <div class="row">
+    <div class="col-md-5">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Subject Id" name="subjectId" [(ngModel)]="subjectId" type="text">
+      </mat-form-field>
+    </div>
+    <div class="col-md-3">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Subject Name" name="subjectName" [(ngModel)]="subjectName">
+      </mat-form-field>
+    </div>
+    <div class="col-md-3">
+      <button mat-raised-button type="submit" class="btn btn-primary pull-right">Add subject</button>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</form>
+
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead class="">
+      <th>Subject ID</th>
+      <th>Subject Name</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let el of subject">
+        <td>{{el.subjectID}}</td>
+        <td>{{el.subjectName}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

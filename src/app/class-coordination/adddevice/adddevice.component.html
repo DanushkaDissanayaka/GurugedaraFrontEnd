@@ -1,3 +1,54 @@
-<p>
-  adddevice works!
-</p>
+<form (submit)="addDevice()">
+  <div class="row">
+
+    <div class="col-md-3">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Device ID" name="deviceId" [(ngModel)]="deviceId" type="text">
+      </mat-form-field>
+    </div>
+
+    <div class="col-md-3">
+      <div class="btn-group">
+        <button class="btn btn-primary dropdown-toggle mr-6" type="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">{{type}}</button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" (click)="typefunction(el.name,el.name)" *ngFor="let el of typedata">{{el.name}}</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <!--Location dropdown-->
+        <div class="btn-group">
+          <button class="btn btn-primary dropdown-toggle mr-6" type="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">{{LocationDropdown}}</button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" (click)="classDropDwon(el.locationID,el.locationName)" *ngFor="let el of elements">{{el.locationName}}</a>
+          </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+      <button mat-raised-button type="submit" class="btn btn-primary pull-right">Assign Device</button>
+    </div>
+
+  </div>
+  <div class="clearfix"></div>
+</form>
+
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead class="">
+      <th>Location ID</th>
+      <th>Location Name</th>
+      <th>Type</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let el of devices">
+        <td>{{el.DeviceId}}</td>
+        <td>{{el.locationID}}</td>
+        <td>{{el.type}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -38,7 +38,7 @@ export class StudentComponent implements OnInit {
     if (value.length < 10) {
       console.log("Check nic number");
       this.showNOtification("Check nic number");
-      return false;
+      return false; 
     }
     for (let i = 0; i < this.elements.length; i++) {
       if (this.elements[i] == value) {

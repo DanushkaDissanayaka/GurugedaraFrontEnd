@@ -16,6 +16,14 @@ import { StudentComponent } from '../../register-user/student/student.component'
 import { TeacherComponent } from '../../register-user/teacher/teacher.component';
 import { OfficeUserComponent } from '../../register-user/office-user/office-user.component';
 import { AdminComponent } from '../../register-user/admin/admin.component';
+import { ClassCoordinationComponent } from '../../class-coordination/class-coordination.component';
+import { AddclassComponent } from '../../class-coordination/addclass/addclass.component';
+import { AddlocationComponent } from '../../class-coordination/addlocation/addlocation.component';
+import { AdddeviceComponent } from '../../class-coordination/adddevice/adddevice.component';
+import { AddsubjectComponent } from '../../class-coordination/addsubject/addsubject.component';
+import { MarksComponent } from '../../marks/marks.component';
+import { AttendanceComponent } from '../../attendance/attendance.component';
+import { PaymentsComponent } from '../../payments/payments.component';
 
 import {
   MatButtonModule,
@@ -51,6 +59,14 @@ import {
     OfficeUserComponent,
     TeacherComponent,
     AdminComponent,
+    ClassCoordinationComponent,
+    AddclassComponent,
+    AddlocationComponent,
+    AdddeviceComponent,
+    AddsubjectComponent,
+    MarksComponent,
+    AttendanceComponent,
+    PaymentsComponent,
   ]
 })
 

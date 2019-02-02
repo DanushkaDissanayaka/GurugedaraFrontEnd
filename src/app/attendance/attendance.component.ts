@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AttendanceComponent implements OnInit {
 
+  dropDownname = "year"
+  dropDownName2 = "month"
+
   constructor() { }
 
   ngOnInit() {
   }
+ setDropDwonName(name){
+   this.dropDownname = name;
+ }
 
+ setDropDwonName2(name){
+  this.dropDownName2 = name;
+}
 }

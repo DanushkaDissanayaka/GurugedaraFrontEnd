@@ -13,6 +13,7 @@ import { AttendanceComponent } from '../../attendance/attendance.component';
 import { PaymentsComponent } from '../../payments/payments.component';
 import { MarksComponent } from '../../marks/marks.component';
 import { ClassCoordinationComponent } from '../../class-coordination/class-coordination.component';
+import { AddNotificationComponent } from '../../add-notification/add-notification.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -71,4 +72,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'viewpayment',     component: PaymentsComponent},
     { path: 'marks',     component: MarksComponent},
     { path: 'classCoordination',     component: ClassCoordinationComponent},
+    { path: 'addNotification',     component: AddNotificationComponent},
 ];

@@ -7,8 +7,8 @@
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           {{dropDownName}}
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" *ngFor="let class of classList">
-                          <a class="dropdown-item" (click)="setDropDownName(class.ClassID)">{{ class.ClassID }}</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+                          <a class="dropdown-item" *ngFor="let class of classList" (click)="setDropDownName(class)">{{ class.Title }}</a>
                         </div>
                       </div>
                 </th>
@@ -21,16 +21,22 @@
               Student Id
           </th>
           <th>
+              Student Name
+          </th>
+          <th>
               Mark
           </th>
       </thead>
       <tbody>
-          <tr>
+          <tr *ngFor="let student of studentList">
             <td>
-                Dakota Rice
+                {{student.UserID}}
             </td>
             <td>
-                Niger
+                {{student.FirstName}} {{student.MiddleName}} {{student.LastName}}
+            </td>
+            <td>
+                <input type="Number" disabled=false>
             </td>
           </tr>
       </tbody>

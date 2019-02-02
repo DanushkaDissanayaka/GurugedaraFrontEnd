@@ -16,12 +16,6 @@ export class AuthService {
   constructor(private http:Http) { }
 
   /**Class Fletch functions */
-  getclasses(){
-    let headers = new Headers();
-    headers.append('Cotent-type','application/json');
-    return this.http.get(hostAddress +'/class/getClassDetails',{headers: headers})
-    .pipe(map(res => res.json()));
-  }
 
   addfeeRecords(data){
     let headers = new Headers();

@@ -17,19 +17,22 @@ export class AddmarksComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.getAllClassID()
   }
 
   setDropDownName(name){
     this.dropDownName = name;
     console.log(this.dropDownName);
   }
-
+ 
   getAllClassID(){
     this.Classes.getclasses()
       .subscribe(result => {
-        this.classList = result.json().data
+        // for(var i=0; i<result.data.length; i++){
+        //   this.classList = result.data
+        // }
         console.log(this.classList);
-      })
+      }) 
   }
 
 }

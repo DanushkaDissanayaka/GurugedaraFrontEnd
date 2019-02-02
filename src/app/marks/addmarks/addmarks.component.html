@@ -8,7 +8,7 @@
                           {{dropDownName}}
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" *ngFor="let class of classList">
-                          <a class="dropdown-item" (click)="setDropDownName({{class.classId}})">{{ class.title }}</a>
+                          <a class="dropdown-item" (click)="setDropDownName(class.ClassID)">{{ class.ClassID }}</a>
                         </div>
                       </div>
                 </th>

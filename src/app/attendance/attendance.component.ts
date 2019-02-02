@@ -1,5 +1,6 @@
+import { UserServiceService } from './../services/user-service.service';
 import { Component, OnInit } from '@angular/core';
-import { ClassService} from '../services/class.service';
+import { ClassService } from '../services/class.service';
 
 @Component({
   selector: 'app-attendance',
@@ -8,13 +9,20 @@ import { ClassService} from '../services/class.service';
 })
 export class AttendanceComponent implements OnInit {
 
-  classTitle : any 
-
+  classTitle: any
+  studentName: any
+  public backMonth;
+  userid: string = "S100"
+  guardianid: string = "G100"
+  role = "guardian"
+  gurdianDetected:boolean = false;
 
   dropDownname = "year";
   dropDownMonth = "Month"
   dropDownTitle = "Class Title"
-  classId : any
+  dropDownStName = "Student name"
+  studentId: any
+  classId: any
   month = [
     { id: 0, name: "January" },
     { id: 1, name: "February" },
@@ -30,19 +38,23 @@ export class AttendanceComponent implements OnInit {
     { id: 11, name: "december" },
   ];
 
-  public backMonth;
-  userid:string = "S100"
+
   constructor(
-    private classservice : ClassService
+    private classservice: ClassService,
+    private userservice: UserServiceService
   ) { }
 
   ngOnInit() {
-    this.classservice.getStudentEnrolledClass({userId:this.userid}).subscribe(result =>{
-      console.log(result);
-      this.classTitle = result.data;
-      console.log(this.classTitle[0]);
-       
-    });
+    if (this.role == "guardian") {
+      this.userservice.getStudentIdFromGuardianId({ username: this.guardianid }).subscribe(result => {
+        console.log(result);
+        this.studentName = result.data;
+      })
+      this.gurdianDetected = true;
+    }
+    else {
+      this.getstudentClass(this.userid);
+    }
   }
   setDropDwonName(name) {
     this.dropDownname = name;
@@ -54,14 +66,27 @@ export class AttendanceComponent implements OnInit {
 
   }
 
-  setClasstitle(id : string , values : string){
-    this. dropDownTitle = values;
-    this. classId = id ;
+  setClasstitle(id: string, values: string) {
+    this.dropDownTitle = values;
+    this.classId = id;
   }
 
-  showDetails(){
+  showDetails() {
     console.log(this.dropDownname);
     console.log(this.dropDownMonth);
     console.log(this.classId);
+  }
+
+  setStudentName(id: string, value: string) {
+    this.dropDownStName = value;
+    this.studentId = id;
+    this.getstudentClass(id);
+  }
+  getstudentClass(studentId: any) {
+    this.classservice.getStudentEnrolledClass({ userId: studentId }).subscribe(result => {
+      console.log(result);
+      this.classTitle = result.data;
+      console.log(this.classTitle[0]);
+    });
   }
 }

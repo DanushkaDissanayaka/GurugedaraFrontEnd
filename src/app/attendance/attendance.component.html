@@ -4,11 +4,11 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-info">
-            <h3 class="card-title " align = "Center">Your Attendance Record</h3>
+            <h3 class="card-title " align="Center">Your Attendance Record</h3>
             <h4 class="card-category"> Choose your details required below</h4>
           </div>
           <div class="card-body">
-
+            <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
             <div class="row">
 
               <div class="btn-group">
@@ -29,7 +29,7 @@
 
                 </div>
               </div>
-
+              <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////// -->
               <div class="btn-group">
                 <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown" aria-haspopup="true"
                   aria-expanded="false">{{dropDownMonth}}</button>
@@ -40,15 +40,27 @@
 
                 </div>
               </div>
+
+              <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+              <div class="btn-group" *ngIf="gurdianDetected">
+                <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">{{dropDownStName}}</button>
+
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" (click)="setStudentName(elem.UserID , elem.FirstName)" *ngFor="let elem of studentName">{{elem.FirstName}}</a>
+                </div>
+              </div>
+              <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
               <div class="btn-group">
                 <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown" aria-haspopup="true"
                   aria-expanded="false">{{dropDownTitle}}</button>
 
                 <div class="dropdown-menu">
-                  <a class="dropdown-item"  (click)="setClasstitle(ele.Title , ele.ClassID)" *ngFor="let ele of classTitle">{{ele.Title}}</a>
+                  <a class="dropdown-item" (click)="setClasstitle(ele.ClassID,ele.Title )" *ngFor="let ele of classTitle">{{ele.Title}}</a>
                 </div>
               </div>
-
+              <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////// -->
               <br>
 
 
@@ -62,7 +74,7 @@
 
             <br>
             <br>
-
+            <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////-->
             <div class="table-responsive">
               <table class="table table-hover">
                 <thead class="">
@@ -86,6 +98,8 @@
                 </tbody>
               </table>
             </div>
+            <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
           </div>
         </div>
       </div>

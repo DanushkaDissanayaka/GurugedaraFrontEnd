@@ -23,7 +23,7 @@ export class ClassService {
   getStudentsForClass(ClassId){
     let headers = new Headers();
     headers.append('Cotent-type','application/json');
-    return this.http.get(hostAddress +'/class/getAllstudentDetailsOfAclass',{headers: headers})
+    return this.http.post(hostAddress +'/class/getAllstudentDetailsOfAclass',ClassId, {headers: headers})
     .pipe(map(res => res.json()));
   }
 }

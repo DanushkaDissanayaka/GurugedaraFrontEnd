@@ -22,26 +22,29 @@ export class AddmarksComponent implements OnInit {
   }
 
   setDropDownName(name){
-    this.getStudentsOfClass(name);
-    this.dropDownName = name;
-    console.log(this.dropDownName);
+    // console.log(name.ClassID)
+    this.getStudentsOfClass(name.ClassID);
+    this.dropDownName = name.Title;
+    // console.log(this.dropDownName);
   }
  
   getAllClassID(){
     this.Classes.getClasses()
       .subscribe(result => {
-        console.log(result.data)
+        // console.log(result.data)
         this.classList = result.data
-        console.log(this.classList);
+        // console.log(this.classList);
       }) 
   }
 
   getStudentsOfClass(ClassID){
-    this.Classes.getStudentsForClass(ClassID)
+    console.log(ClassID)
+    this.Classes.getStudentsForClass({ClassID:"PHY-001"}) 
       .subscribe(result => {
         console.log(result)
         this.studentList = result.data
         console.log(this.studentList);
+        +0
       })
   }
 } 

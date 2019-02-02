@@ -39,7 +39,7 @@ export class AddmarksComponent implements OnInit {
 
   getStudentsOfClass(ClassID){
     console.log(ClassID)
-    this.Classes.getStudentsForClass({ClassID:"PHY-001"}) 
+    this.Classes.getStudentsForClass({ClassID:ClassID}) 
       .subscribe(result => {
         console.log(result)
         this.studentList = result.data

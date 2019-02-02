@@ -11,6 +11,7 @@ export class AddmarksComponent implements OnInit {
 
   dropDownName ="Select ClassID"
   classList: any[]=[]
+  studentList: any[]=[]
 
   constructor(
     private Classes: ClassService
@@ -21,18 +22,26 @@ export class AddmarksComponent implements OnInit {
   }
 
   setDropDownName(name){
+    this.getStudentsOfClass(name);
     this.dropDownName = name;
     console.log(this.dropDownName);
   }
  
   getAllClassID(){
-    this.Classes.getclasses()
+    this.Classes.getClasses()
       .subscribe(result => {
-        // for(var i=0; i<result.data.length; i++){
-        //   this.classList = result.data
-        // }
+        console.log(result.data)
+        this.classList = result.data
         console.log(this.classList);
       }) 
   }
 
-}
+  getStudentsOfClass(ClassID){
+    this.Classes.getStudentsForClass(ClassID)
+      .subscribe(result => {
+        console.log(result)
+        this.studentList = result.data
+        console.log(this.studentList);
+      })
+  }
+} 

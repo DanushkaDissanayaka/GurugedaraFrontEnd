@@ -14,8 +14,10 @@ import { PaymentsComponent } from '../../payments/payments.component';
 import { MarksComponent } from '../../marks/marks.component';
 import { ClassCoordinationComponent } from '../../class-coordination/class-coordination.component';
 import { AddNotificationComponent } from '../../add-notification/add-notification.component';
+import { ViewStudentDetailsComponent } from '../../view-student-details/view-student-details.component';
 import { EvaluationComponent } from '../../evaluation/evaluation.component';
 import { TimetableComponent } from '../../timetable/timetable.component';
+import { EnterPaymentsComponent } from '../../enter-payments/enter-payments.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -34,6 +36,9 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'marks',     component: MarksComponent},
     { path: 'classCoordination',     component: ClassCoordinationComponent},
     { path: 'addNotification',     component: AddNotificationComponent},
+    { path: 'viewStudentDetails',  component:  ViewStudentDetailsComponent},
     { path: 'evaluation',     component: EvaluationComponent},
     { path: 'timetable',     component: TimetableComponent},
+    { path: 'EnterPayments',     component: EnterPaymentsComponent },
+
 ];

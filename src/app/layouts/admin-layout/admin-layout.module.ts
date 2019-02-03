@@ -27,8 +27,11 @@ import { PaymentsComponent } from '../../payments/payments.component';
 import { AddmarksComponent } from '../../marks/addmarks/addmarks.component';
 import { ViewmarksComponent } from '../../marks/viewmarks/viewmarks.component';
 import { AddNotificationComponent } from '../../add-notification/add-notification.component';
+import { ViewStudentDetailsComponent } from '../../view-student-details/view-student-details.component';
 import { EvaluationComponent } from '../../evaluation/evaluation.component';
 import { TimetableComponent } from '../../timetable/timetable.component';
+import { EnterPaymentsComponent } from '../../enter-payments/enter-payments.component';
+
 
 import {
   MatButtonModule,
@@ -75,8 +78,10 @@ import {
     AddmarksComponent,
     ViewmarksComponent,
     AddNotificationComponent,
+    ViewStudentDetailsComponent,
     EvaluationComponent,
     TimetableComponent,
+    EnterPaymentsComponent,
   ]
 })
 

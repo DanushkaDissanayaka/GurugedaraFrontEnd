@@ -1,27 +1,26 @@
->
+
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-4">
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 {{dropDownName}}
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" *ngFor="let class of classList" (click)="setDropDownName(class)">{{class.Title
-                    }}</a>
+                <a class="dropdown-item" *ngFor="let class of classList" (click)="setDropDownName(class)">{{class.Title}}</a>
             </div>
         </div>
     </div>
 
     <div class="col-md-3">
         <mat-form-field class="example-full-width">
-            <input matInput placeholder="Assignment Date" type="date">
+            <input matInput placeholder="Assignment Date" type="date" [(ngModel)] = "date" name ="date">
         </mat-form-field>
     </div>
 
     <div class="col-md-3">
         <mat-form-field class="example-full-width">
-            <input matInput placeholder="Description" type="txt">
+            <input matInput placeholder="Description" type="txt" [(ngModel)] = "description" name ="description">
         </mat-form-field>
     </div>
 
@@ -41,7 +40,7 @@
             </th>
         </thead>
         <tbody>
-            <tr *ngFor="let student of studentList">
+           <tr *ngFor="let student of studentList">
                 <td>
                     {{student.UserID}}
                 </td>
@@ -50,12 +49,12 @@
                 </td>
                 <td>
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="enter Marks" type="number" (change) = "collectmarks($event, student.UserID)">
+                        <input matInput placeholder="enter Marks" type="number" (change)="collectmarks($event, student.UserID)">
                     </mat-form-field>
                 </td>
             </tr>
         </tbody>
     </table>
-    <button type="button" class="btn btn-warning">Submit</button>
+    <button type="button" class="btn btn-warning" (click) = "onSubmit()">Submit</button>
 
 </div>

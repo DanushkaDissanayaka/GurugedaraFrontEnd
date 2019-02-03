@@ -20,6 +20,8 @@ export const ROUTES: RouteInfo[] = [
     { path: '/icons', title: 'Icons',  icon:'bubble_chart', class: '' },
     { path: '/notifications', title: 'Notifications & messages',  icon:'notifications', class: '' },
     { path: '/addNotification', title: 'Add New Notification',  icon:'add_alert', class: '' },
+    { path: '/viewStudentDetails', title: 'View Student Details',  icon:'people', class: '' },
+    { path: '/EnterPayments', title: 'Add Payments',  icon:'payment', class: '' },
 ];
 @Component({
   selector: 'app-sidebar',

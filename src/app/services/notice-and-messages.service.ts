@@ -26,6 +26,16 @@ SendNotification(data){
     return this.http.post( hostAddress +'/notification/addNotification',data,{headers: headers}) //http://localhost:3000/
       .pipe(map(res => res.json()));
 }
+////////here send massege havent rout in backend/////////
+///////dont delete it/////////
+
+SendMessage(data){
+  let headers = new Headers();
+    headers.append('Cotent-type','application/json');
+    return this.http.post( hostAddress +'/notification/addNotification',data,{headers: headers}) //http://localhost:3000/
+      .pipe(map(res => res.json()));
+}
+
 
 
 

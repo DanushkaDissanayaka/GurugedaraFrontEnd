@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -31,6 +32,8 @@ import { ViewStudentDetailsComponent } from '../../view-student-details/view-stu
 import { EvaluationComponent } from '../../evaluation/evaluation.component';
 import { TimetableComponent } from '../../timetable/timetable.component';
 import { EnterPaymentsComponent } from '../../enter-payments/enter-payments.component';
+import { SendMessageComponent } from '../../send-message/send-message.component';
+
 
 
 import {
@@ -82,6 +85,8 @@ import {
     EvaluationComponent,
     TimetableComponent,
     EnterPaymentsComponent,
+    SendMessageComponent,
+    
   ]
 })
 

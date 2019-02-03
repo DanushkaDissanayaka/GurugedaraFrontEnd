@@ -21,6 +21,7 @@ export class AddNotificationComponent implements OnInit {
   Message: any;
   typeid:string
   classid:string
+  
 
 
 

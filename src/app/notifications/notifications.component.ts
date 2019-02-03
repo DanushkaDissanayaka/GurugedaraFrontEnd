@@ -11,9 +11,10 @@ export class NotificationsComponent implements OnInit {
   constructor(private notificationsservice : NotificationsService) { }
   notification:any;
   message:any;
+  
 
   ngOnInit() {
-    this.notificationsservice.showNotification('top','left',"test notifiction",4)
+    //this.notificationsservice.showNotification('top','left',"test notifiction",4)
     this.notification = [
       {title:"Title",message:"this is the message fot this notification",type:'assignment'},
       {title:"Title",message:"this is the message fot this notification",type:'assignment'},

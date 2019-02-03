@@ -50,7 +50,7 @@
                 </td>
                 <td>
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="enter Marks" type="number" (ngModelChange) = "collectmarks($event,student.UserID)">
+                        <input matInput placeholder="enter Marks" type="number" (change) = "collectmarks($event, student.UserID)">
                     </mat-form-field>
                 </td>
             </tr>

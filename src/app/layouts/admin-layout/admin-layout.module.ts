@@ -27,6 +27,8 @@ import { PaymentsComponent } from '../../payments/payments.component';
 import { AddmarksComponent } from '../../marks/addmarks/addmarks.component';
 import { ViewmarksComponent } from '../../marks/viewmarks/viewmarks.component';
 import { AddNotificationComponent } from '../../add-notification/add-notification.component';
+import { EvaluationComponent } from './evaluation/evaluation.component';
+import { TimetableComponent } from './timetable/timetable.component';
 
 
 import {
@@ -74,6 +76,8 @@ import {
     AddmarksComponent,
     ViewmarksComponent,
     AddNotificationComponent,
+    EvaluationComponent,
+    TimetableComponent,
   ]
 })
 

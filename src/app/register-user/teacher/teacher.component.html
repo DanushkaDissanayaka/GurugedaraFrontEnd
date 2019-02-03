@@ -1,7 +1,7 @@
 <form (submit)="register()">
     <div class="col">
         <div class="col-md-4">
-          <select  name="role" [(ngModel)]="role" class="browser-default custom-select"><br>
+          <select  name="role" [(ngModel)]="role" class="browser-default custom-select" required><br>
             <option value="">Select Employee Type</option>
             <option value="officeuser">Office user</option>
             <option value="teacher">Teacher</option>
@@ -11,7 +11,7 @@
   <div class="row">
     <div class="col-md-5">
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="First Name" name="FirstName" [(ngModel)]="FirstName" type="text">
+        <input matInput placeholder="First Name" name="FirstName" [(ngModel)]="FirstName" type="text" required>
       </mat-form-field>
     </div>
     <div class="col-md-3">
@@ -21,53 +21,53 @@
     </div>
     <div class="col-md-4">
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Last Name" name="LastName" [(ngModel)]="LastName" type="text">
+        <input matInput placeholder="Last Name" name="LastName" [(ngModel)]="LastName" type="text" required>
       </mat-form-field>
     </div>
   </div>
   <div class="row">
     <div class="col-md-3">
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Birth Day" name="DOB" [(ngModel)]="DOB" type="date">
+        <input matInput placeholder="Birth Day" name="DOB" [(ngModel)]="DOB" type="date" required>
       </mat-form-field>
     </div>
     <div class="col-md-4">
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Email Address" name="email" [(ngModel)]="email" type="email">
+        <input matInput placeholder="Email Address" name="email" [(ngModel)]="email" type="email" required>
       </mat-form-field>
     </div>
     <div class="col-md-4">
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Constact No" name="ContactNo" [(ngModel)]="ContactNo" type="email">
+        <input matInput placeholder="Constact No" name="ContactNo" [(ngModel)]="ContactNo" type="email" required>
       </mat-form-field>
     </div>
   </div>
   <div class="row">
     <div class="col-md-6">
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Password" name="password" [(ngModel)]="password" type="password" type="password">
+        <input matInput placeholder="Password" name="password" [(ngModel)]="password" type="password" type="password" required>
       </mat-form-field>
     </div>
     <div class="col-md-6">
       <mat-form-field class="example-full-width">
-        <input matInput name="repassword" [(ngModel)]="repassword" type="password" placeholder="Confirm password">
+        <input matInput name="repassword" [(ngModel)]="repassword" type="password" placeholder="Confirm password" required>
       </mat-form-field>
     </div>
   </div>
   <div class="row">
     <div class="col-md-4">
       <mat-form-field class="example-full-width">
-        <input matInput name="AddNo" [(ngModel)]="AddNo" type="text" placeholder="Address No" type="text">
+        <input matInput name="AddNo" [(ngModel)]="AddNo" type="text" placeholder="Address No" type="text" >
       </mat-form-field>
     </div>
     <div class="col-md-4">
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Street" name="AddStreet" [(ngModel)]="AddStreet" type="text">
+        <input matInput placeholder="Street" name="AddStreet" [(ngModel)]="AddStreet" type="text" required>
       </mat-form-field>
     </div>
     <div class="col-md-4">
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="City" name="AddCity" [(ngModel)]="AddCity" type="text">
+        <input matInput placeholder="City" name="AddCity" [(ngModel)]="AddCity" type="text" required>
       </mat-form-field>
     </div>
   </div>

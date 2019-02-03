@@ -96,4 +96,19 @@ export class ClassService {
   return this.http.post(hostAddress + '/class/ClassTitle', userId, { headers: headers }) //http://localhost:3000/
     .pipe(map(res => res.json()));
 }
+
+getStudentAttendanceDetails(data) {
+  let headers = new Headers();
+  headers.append('Cotent-type', 'application/json');
+  return this.http.post(hostAddress + '/attendance/getAttendanceStudent', data, { headers: headers }) 
+    .pipe(map(res => res.json()));
+}
+
+getStudentPaymentDetails(data) {
+  let headers = new Headers();
+  headers.append('Cotent-type', 'application/json');
+  return this.http.post(hostAddress + '/fee/getFeeStudent', data, { headers: headers }) 
+    .pipe(map(res => res.json()));
+}
+
 }

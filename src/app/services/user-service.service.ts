@@ -25,6 +25,13 @@ export class UserServiceService {
       .pipe(map(res => res.json()));
   }
 
+  registerGuardian(user){
+    let headers = new Headers();
+    headers.append('Cotent-type','application/json');
+    return this.http.post( hostAddress +'/users/register',user,{headers: headers}) //http://localhost:3000/
+      .pipe(map(res => res.json()));
+  }
+
   findUser(data){
     let headers = new Headers();
     headers.append('Cotent-type','application/json');

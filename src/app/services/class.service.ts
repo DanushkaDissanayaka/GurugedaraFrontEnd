@@ -26,4 +26,12 @@ export class ClassService {
     return this.http.post(hostAddress +'/class/getAllstudentDetailsOfAclass',ClassId, {headers: headers})
     .pipe(map(res => res.json()));
   }
+
+ 
+  getTeacherClasses(userId){
+    let headers = new Headers();
+    headers.append('Cotent-type','application/json');
+    return this.http.post(hostAddress+'/class/ClassTitle',userId,{headers: headers}) //http://localhost:3000/
+      .pipe(map(res => res.json()));
+  }
 }

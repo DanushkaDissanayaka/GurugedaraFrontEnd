@@ -47,7 +47,16 @@ export class AddmarksComponent implements OnInit {
         +0
       })
   }
-  collectmarks(marks,userid){
-    console.log(marks + userid);
+
+  valuechange(newValue) {
+    console.log(newValue.target.value);
+    console.log(newValue.taeget);
+
   }
+
+  addMarks(){
+
+  }
+
+  marks = [];
 } 

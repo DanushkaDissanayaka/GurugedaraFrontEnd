@@ -34,6 +34,8 @@ import {
   MatTooltipModule,
   MatSelectModule
 } from '@angular/material';
+import { ViewStudentDetailsComponent } from './view-student-details/view-student-details.component';
+import { EnterPaymentsComponent } from './enter-payments/enter-payments.component';
 
 @NgModule({
   imports: [
@@ -58,6 +60,7 @@ import {
     AdminLayoutComponent,
     LoginComponent,
     RegisterComponent,
+    EnterPaymentsComponent,
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

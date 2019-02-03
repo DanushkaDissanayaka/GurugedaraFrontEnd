@@ -14,6 +14,7 @@ import { PaymentsComponent } from '../../payments/payments.component';
 import { MarksComponent } from '../../marks/marks.component';
 import { ClassCoordinationComponent } from '../../class-coordination/class-coordination.component';
 import { AddNotificationComponent } from '../../add-notification/add-notification.component';
+import { ViewStudentDetailsComponent } from '../../view-student-details/view-student-details.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -32,4 +33,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'marks',     component: MarksComponent},
     { path: 'classCoordination',     component: ClassCoordinationComponent},
     { path: 'addNotification',     component: AddNotificationComponent},
+    { path: 'viewStudentDetails',  component:  ViewStudentDetailsComponent},
 ];

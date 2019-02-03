@@ -1,4 +1,4 @@
->
+
 <div class="row">
     <div class="col-md-3">
         <div class="dropdown">
@@ -21,7 +21,7 @@
 
     <div class="col-md-3">
         <mat-form-field class="example-full-width">
-            <input matInput placeholder="Description" type="txt">
+            <input matInput placeholder="Description" type="txt" >
         </mat-form-field>
     </div>
 
@@ -50,7 +50,7 @@
                 </td>
                 <td>
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="enter Marks" type="number" (ngModelChange) = "collectmarks($event,student.UserID)">
+                            <input matInput placeholder="Student's Mark" name="teacherID"  (ngModelChange)="valuechange($event)">
                     </mat-form-field>
                 </td>
             </tr>

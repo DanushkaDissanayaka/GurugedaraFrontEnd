@@ -13,6 +13,7 @@ export class AttendanceComponent implements OnInit {
   classTitle: any
   studentName: any
   public backMonth;
+  public backYear;
   userid: string;
   guardianid: string;
   role: string ;
@@ -113,7 +114,7 @@ export class AttendanceComponent implements OnInit {
   }
 
   getAttendance() {
-    this.classservice.getStudentAttendanceDetails({ UserId: this.userid, ClassId: this.classId , month: this.backMonth , year:2019 }).subscribe(result => {
+    this.classservice.getStudentAttendanceDetails({ UserId: this.userid, ClassId: this.classId , month: this.backMonth , year:this.backYear}).subscribe(result => {
       console.log(result);
       this.attendance = result.data;
       console.log(this.attendance);

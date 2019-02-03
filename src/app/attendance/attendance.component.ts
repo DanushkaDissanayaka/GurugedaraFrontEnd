@@ -89,4 +89,7 @@ export class AttendanceComponent implements OnInit {
       console.log(this.classTitle[0]);
     });
   }
+
+  
 }
+

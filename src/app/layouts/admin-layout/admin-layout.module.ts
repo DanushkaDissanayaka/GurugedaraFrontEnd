@@ -26,6 +26,7 @@ import { AttendanceComponent } from '../../attendance/attendance.component';
 import { PaymentsComponent } from '../../payments/payments.component';
 import { AddmarksComponent } from '../../marks/addmarks/addmarks.component';
 import { ViewmarksComponent } from '../../marks/viewmarks/viewmarks.component';
+import { AddNotificationComponent } from '../../add-notification/add-notification.component';
 
 
 import {
@@ -72,6 +73,7 @@ import {
     PaymentsComponent,
     AddmarksComponent,
     ViewmarksComponent,
+    AddNotificationComponent,
   ]
 })
 

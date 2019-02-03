@@ -13,7 +13,7 @@ export class ClassService {
 
   constructor(private http:Http) { }
 
-  getclasses(){
+  getClasses(){
     let headers = new Headers();
     headers.append('Cotent-type','application/json');
     return this.http.get(hostAddress +'/class/getClassDetails',{headers: headers})
@@ -67,5 +67,18 @@ export class ClassService {
     headers.append('Cotent-type','application/json');
     return this.http.get(hostAddress+'/device/getdevicedetails',{headers: headers}) //http://localhost:3000/
       .pipe(map(res => res.json()));
+  }
+
+   getStudentEnrolledClass(data){
+    let headers = new Headers();
+    headers.append('Cotent-type','application/json');
+    return this.http.post(hostAddress+'/class/getclassDetailsFromStudentId',data,{headers: headers}) //http://localhost:3000/
+    .pipe(map(res => res.json())); 
+  }
+  getStudentsForClass(ClassId){
+    let headers = new Headers();
+    headers.append('Cotent-type','application/json');
+    return this.http.post(hostAddress +'/class/getAllstudentDetailsOfAclass',ClassId, {headers: headers})
+    .pipe(map(res => res.json()));
   }
 }

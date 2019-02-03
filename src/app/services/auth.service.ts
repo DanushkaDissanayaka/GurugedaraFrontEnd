@@ -63,12 +63,7 @@ export class AuthService {
 
   
 
-  getStudentEnrolledClass(data){
-    let headers = new Headers();
-    headers.append('Cotent-type','application/json');
-    return this.http.post(hostAddress+'/class/getclassDetailsFromStudentId',data,{headers: headers}) //http://localhost:3000/
-    .pipe(map(res => res.json()));
-  }
+ 
 
   enrollStudent(data){
     let headers = new Headers();

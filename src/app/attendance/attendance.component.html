@@ -17,8 +17,8 @@
                   aria-expanded="false">{{dropDownname}}</button>
 
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" (click)="setDropDwonName(2010)">2010</a>
-                  <a class="dropdown-item" (click)="setDropDwonName(2011)">2011</a>
+                  <a class="dropdown-item" (click)="setDropDwonName(el.id,el.value)" *ngFor="let el of Year">{{el.value}}</a>
+                  <!-- <a class="dropdown-item" (click)="setDropDwonName(2011)">2011</a>
                   <a class="dropdown-item" (click)="setDropDwonName(2012)">2012</a>
                   <a class="dropdown-item" (click)="setDropDwonName(2013)">2013</a>
                   <a class="dropdown-item" (click)="setDropDwonName(2014)">2014</a>
@@ -26,7 +26,7 @@
                   <a class="dropdown-item" (click)="setDropDwonName(2016)">2016</a>
                   <a class="dropdown-item" (click)="setDropDwonName(2017)">2017</a>
                   <a class="dropdown-item" (click)="setDropDwonName(2018)">2018</a>
-                  <a class="dropdown-item" (click)="setDropDwonName(2019)">2019</a>
+                  <a class="dropdown-item" (click)="setDropDwonName(2019)">2019</a> -->
 
                 </div>
               </div>
@@ -66,7 +66,7 @@
 
 
               <div class="btn-group">
-                <button class="btn btn-primary pull-right waves-effect" type="submit" (click)="showDetails()"> Submit
+                <button class="btn btn-primary pull-right waves-effect" type="submit" (click)="getAttendance()"> Submit
                 </button>
               </div>
 
@@ -81,21 +81,17 @@
             <div class="table-responsive">
               <table class="table table-hover">
                 <thead class="">
-                  <th></th>
-                  <th>date</th>
-                  <th>Date of Payment</th>
-                  <!-- <th>Teacher</th>
-                    <th>Start Time</th>
-                    <th>End Time</th> -->
+                  <th> </th>
+                  <th>Date</th>
+                  <th>In Time</th>
+                  <th>Out Time</th>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Dakota Rice</td>
-                    <td>Niger</td>
-                    <!-- <td>Oud-Turnhout</td>
-                      <td>$36,738</td>
-                      <td>$36,738</td> -->
+                  <tr *ngFor="let el of attendance" >
+                    <td> </td>
+                    <td>{{el.atDate}}</td>
+                    <td>{{el.InTime}}</td>
+                    <td>{{el.outTime}}</td>
                   </tr>
 
                 </tbody>

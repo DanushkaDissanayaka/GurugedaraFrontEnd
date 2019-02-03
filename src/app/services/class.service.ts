@@ -76,9 +76,6 @@ export class ClassService {
       .pipe(map(res => res.json()));
   }
 
-
-  
-
   getStudentEnrolledClass(data) {
     let headers = new Headers();
     headers.append('Cotent-type', 'application/json');
@@ -94,27 +91,39 @@ export class ClassService {
       .pipe(map(res => res.json()));
   }
 
+  getTeacherClasses(userId) {
+    let headers = new Headers();
+    headers.append('Cotent-type', 'application/json');
+    return this.http.post(hostAddress + '/class/ClassTitle', userId, { headers: headers }) //http://localhost:3000/
+      .pipe(map(res => res.json()));
+  }
 
- getTeacherClasses(userId){
-  let headers = new Headers();
-  headers.append('Cotent-type', 'application/json');
-  return this.http.post(hostAddress + '/class/ClassTitle', userId, { headers: headers }) //http://localhost:3000/
-    .pipe(map(res => res.json()));
-}
+  getStudentAttendanceDetails(data) {
+    let headers = new Headers();
+    headers.append('Cotent-type', 'application/json');
+    return this.http.post(hostAddress + '/attendance/getAttendanceStudent', data, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
 
-addmarks(data){
-  let headers = new Headers();
-  headers.append('Cotent-type', 'application/json');
-  return this.http.post(hostAddress + '/mark/addMarks', data, { headers: headers }) //http://localhost:3000/
-    .pipe(map(res => res.json()));
-}
+  getStudentPaymentDetails(data) {
+    let headers = new Headers();
+    headers.append('Cotent-type', 'application/json');
+    return this.http.post(hostAddress + '/fee/getFeeStudent', data, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
 
-addFee(data){
-  let headers = new Headers();
-  headers.append('Cotent-type', 'application/json');
-  return this.http.post(hostAddress + '/fee/addfee', data, { headers: headers }) //http://localhost:3000/
-    .pipe(map(res => res.json()));
-}
+  addmarks(data) {
+    let headers = new Headers();
+    headers.append('Cotent-type', 'application/json');
+    return this.http.post(hostAddress + '/mark/addMarks', data, { headers: headers }) //http://localhost:3000/
+      .pipe(map(res => res.json()));
+  }
+
+  addFee(data) {
+    let headers = new Headers();
+    headers.append('Cotent-type', 'application/json');
+    return this.http.post(hostAddress + '/fee/addfee', data, { headers: headers }) //http://localhost:3000/
+      .pipe(map(res => res.json()));
+  }
 
 }
- 

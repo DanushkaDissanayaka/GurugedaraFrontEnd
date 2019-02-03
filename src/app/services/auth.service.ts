@@ -93,4 +93,6 @@ export class AuthService {
     const token = localStorage.getItem('id_token')
     this.authToken = token;
   }
+
+
 }

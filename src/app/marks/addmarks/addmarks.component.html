@@ -21,16 +21,22 @@
               Student Id
           </th>
           <th>
+              Student Name
+          </th>
+          <th>
               Mark
           </th>
       </thead>
       <tbody>
-          <tr>
+          <tr *ngFor="let student of studentList">
             <td>
-                Dakota Rice
+                {{student.UserID}}
             </td>
             <td>
-                Niger
+                {{student.FirstName}} {{student.MiddleName}} {{student.LastName}}
+            </td>
+            <td>
+                <input type="Number">
             </td>
           </tr>
       </tbody>

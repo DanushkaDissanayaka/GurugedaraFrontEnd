@@ -1,92 +1,107 @@
-
-
 <div class="main-content">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-info">
-            <h4 class="card-title ">Simple Table</h4>
-            <p class="card-category"> Here is a subtitle for this table</p>
+            <h3 class="card-title " align="Center">Your Attendance Record</h3>
+            <h4 class="card-category"> Choose your details required below</h4>
           </div>
           <div class="card-body">
+            <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <div class="row">
 
               <div class="btn-group">
-                  <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">{{dropDownname}}</button>
-                
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item"  (click)="setDropDwonName(2010)">2010</a>
-                    <a class="dropdown-item"  (click)="setDropDwonName(2011)">2011</a>
-                    <a class="dropdown-item"  (click)="setDropDwonName(2012)">2012</a>
-                    <a class="dropdown-item"  (click)="setDropDwonName(2013)">2013</a>
-                    <a class="dropdown-item"  (click)="setDropDwonName(2014)">2014</a>
-                    <a class="dropdown-item"  (click)="setDropDwonName(2015)">2015</a>
-                    <a class="dropdown-item"  (click)="setDropDwonName(2016)">2016</a>
-                    <a class="dropdown-item"  (click)="setDropDwonName(2017)">2017</a>
-                    <a class="dropdown-item"  (click)="setDropDwonName(2018)">2018</a>
-                    <a class="dropdown-item"  (click)="setDropDwonName(2019)">2019</a>
-                    
-                  </div>
+                <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">{{dropDownname}}</button>
+
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" (click)="setDropDwonName(2010)">2010</a>
+                  <a class="dropdown-item" (click)="setDropDwonName(2011)">2011</a>
+                  <a class="dropdown-item" (click)="setDropDwonName(2012)">2012</a>
+                  <a class="dropdown-item" (click)="setDropDwonName(2013)">2013</a>
+                  <a class="dropdown-item" (click)="setDropDwonName(2014)">2014</a>
+                  <a class="dropdown-item" (click)="setDropDwonName(2015)">2015</a>
+                  <a class="dropdown-item" (click)="setDropDwonName(2016)">2016</a>
+                  <a class="dropdown-item" (click)="setDropDwonName(2017)">2017</a>
+                  <a class="dropdown-item" (click)="setDropDwonName(2018)">2018</a>
+                  <a class="dropdown-item" (click)="setDropDwonName(2019)">2019</a>
+
+                </div>
               </div>
+              <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////// -->
               <div class="btn-group">
-                  <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">{{dropDownName2}}</button>
-                
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" (click)="setDropDwonName2(January)">January</a>
-                    <a class="dropdown-item" (click)="setDropDwonName2(February)">February</a>
-                    <a class="dropdown-item" (click)="setDropDwonName2(March)">March</a>
-                    <a class="dropdown-item" (click)="setDropDwonName2(April)">April</a>
-                    <a class="dropdown-item" (click)="setDropDwonName2(May)">May</a>
-                    <a class="dropdown-item" (click)="setDropDwonName2(June)">June</a>
-                    <a class="dropdown-item" (click)="setDropDwonName2(July)">July</a>
-                    <a class="dropdown-item" (click)="setDropDwonName2(August)">August</a>
-                    <a class="dropdown-item" (click)="setDropDwonName2(September)">September</a>
-                    <a class="dropdown-item" (click)="setDropDwonName2(October)">October</a>
-                    <a class="dropdown-item" (click)="setDropDwonName2(November)">November</a>
-                    <a class="dropdown-item" (click)="setDropDwonName2(December)">December</a>
-                    
-                  </div>
+                <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">{{dropDownMonth}}</button>
+
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" (click)="setDropDwonName2(el.id,el.name)" *ngFor="let el of month">{{el.name}}</a>
+
+
+                </div>
               </div>
+
+              <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+              <div class="btn-group" *ngIf="gurdianDetected">
+                <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">{{dropDownStName}}</button>
+
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" (click)="setStudentName(elem.UserID , elem.FirstName)" *ngFor="let elem of studentName">{{elem.FirstName}}</a>
+                </div>
+              </div>
+              <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
               <div class="btn-group">
-                  <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">Class Title</button>
-                
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Separated link</a>
-                  </div>
+                <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">{{dropDownTitle}}</button>
+
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" (click)="setClasstitle(ele.ClassID,ele.Title )" *ngFor="let ele of classTitle">{{ele.Title}}</a>
+                </div>
               </div>
-            
+              <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+              <br>
+
+
+              <div class="btn-group">
+                <button class="btn btn-primary pull-right waves-effect" type="submit" (click)="showDetails()"> Submit
+                </button>
+              </div>
+
+
+            </div>
+
+            <br>
+            <br>
+            <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////-->
             <div class="table-responsive">
-                <table class="table table-hover">
-                  <thead class="">
-                    <th></th>
-                    <th>date</th>
-                    <th>Date of Payment</th>
-                    <!-- <th>Teacher</th>
+              <table class="table table-hover">
+                <thead class="">
+                  <th></th>
+                  <th>date</th>
+                  <th>Date of Payment</th>
+                  <!-- <th>Teacher</th>
                     <th>Start Time</th>
                     <th>End Time</th> -->
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Dakota Rice</td>
-                      <td>Niger</td>
-                      <!-- <td>Oud-Turnhout</td>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Dakota Rice</td>
+                    <td>Niger</td>
+                    <!-- <td>Oud-Turnhout</td>
                       <td>$36,738</td>
                       <td>$36,738</td> -->
-                    </tr>
+                  </tr>
 
-                  </tbody>
-                </table>
+                </tbody>
+              </table>
+            </div>
+            <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>

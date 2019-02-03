@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaymentsComponent implements OnInit {
 
+  dropdownYear = "year"
+
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  setDropDwonName(name : string){
+    this.dropdownYear = name
   }
 
 }

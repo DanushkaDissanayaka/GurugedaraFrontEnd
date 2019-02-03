@@ -38,4 +38,12 @@ export class UserServiceService {
     return this.http.post( hostAddress +'/users/officeuserRegister',user,{headers: headers}) //http://localhost:3000/
       .pipe(map(res => res.json()));
   }
+
+  getStudentIdFromGuardianId(data){ 
+    let headers = new Headers();
+    headers.append('Cotent-type','application/json');
+    return this.http.post(hostAddress+'/users/getstudentFromGuardian',data,{headers: headers}) //http://localhost:3000/
+    .pipe(map(res => res.json()));
+  }
 }
+

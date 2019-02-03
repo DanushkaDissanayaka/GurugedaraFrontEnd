@@ -25,6 +25,7 @@ export class StudentComponent implements OnInit {
   School: string
   Feetype = "full";
   elements: any = [];
+  
   constructor(
     private validateService: ValidateService,
     private userServiceservice: UserServiceService,

@@ -58,6 +58,17 @@ export class AddmarksComponent implements OnInit {
       })
   }
 
+  valuechange(newValue) {
+    console.log(newValue.target.value);
+    console.log(newValue.taeget);
+
+  }
+
+  addMarks(){
+
+  }
+
+  
   collectmarks(a, id) {
 
     if (!this.validateservice.validateUndefined(this.date)) {

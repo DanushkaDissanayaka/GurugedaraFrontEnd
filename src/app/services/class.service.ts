@@ -76,12 +76,17 @@ export class ClassService {
       .pipe(map(res => res.json()));
   }
 
+
+  
+
   getStudentEnrolledClass(data) {
     let headers = new Headers();
     headers.append('Cotent-type', 'application/json');
     return this.http.post(hostAddress + '/class/getclassDetailsFromStudentId', data, { headers: headers }) //http://localhost:3000/
       .pipe(map(res => res.json()));
   }
+
+
   getStudentsForClass(ClassId) {
     let headers = new Headers();
     headers.append('Cotent-type', 'application/json');
@@ -104,3 +109,4 @@ addmarks(data){
     .pipe(map(res => res.json()));
 }
 }
+ 

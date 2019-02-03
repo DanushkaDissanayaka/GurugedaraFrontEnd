@@ -16,8 +16,11 @@ export class EnterPaymentsComponent implements OnInit {
 
   dropDownTitle = "Class Title"
   classTitle: any[]
-  studentId: any
+  OfficeuserId: string
+  studentID: any
   classId: any
+  amount: any = "Amount"
+  feedate: any
 
   constructor(private validateservice: ValidateService,
     private notificationservice: NotificationsService,
@@ -25,7 +28,7 @@ export class EnterPaymentsComponent implements OnInit {
     private userservice: UserServiceService) { }
 
   ngOnInit() {
-
+    this.OfficeuserId = localStorage.getItem("userId");
   }
 
   valuechange(newValue) {
@@ -34,12 +37,10 @@ export class EnterPaymentsComponent implements OnInit {
         if (data.data[0].role == 'student') {
           this.notificationservice.alertInfo("User found " + data.data[0].FirstName + " " + data.data[0].LastName);
           this.getstudentClass(newValue);
-          this.studentId = newValue;
         }
       }
     });
   }
-
 
   getstudentClass(studentId: any) {
     this.classservice.getStudentEnrolledClass({ userId: studentId }).subscribe(result => {
@@ -48,13 +49,42 @@ export class EnterPaymentsComponent implements OnInit {
     });
   }
 
-  setClasstitle(id: string, values: string) {
-    this.dropDownTitle = values;
-    this.classId = id;
+  setClasstitle(value) {
+    this.dropDownTitle = value.Title;
+    this.classId = value.ClassID;
+    this.amount = value.fullFee;
+
+
   }
 
-  submit(){
+  submit() {
+    const data = {
+      StudentId: this.studentID,
+      OfficeuserId: this.OfficeuserId,
+      ClassId: this.classId,
+      atDate: this.feedate,
+      amount: this.amount
+    }
+    console.log(data);
 
+
+    if (confirm('Are you sure? you want to submit')) {
+      this.classservice.addFee(data).subscribe(data => {
+        if (data.success) {
+          this.notificationservice.alertInfo(data.msg);
+          this.studentID=""
+          this.classId=""
+          this.feedate=""
+          this.amount=""
+
+        }
+        else {
+          this.notificationservice.alertDanger(data.msg);
+        }
+      })
+    } else {
+      // Do nothing!
+    }
   }
-
 }
+

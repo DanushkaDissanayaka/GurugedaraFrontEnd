@@ -14,12 +14,9 @@ import { PaymentsComponent } from '../../payments/payments.component';
 import { MarksComponent } from '../../marks/marks.component';
 import { ClassCoordinationComponent } from '../../class-coordination/class-coordination.component';
 import { AddNotificationComponent } from '../../add-notification/add-notification.component';
-<<<<<<< HEAD
 import { ViewStudentDetailsComponent } from '../../view-student-details/view-student-details.component';
-=======
 import { EvaluationComponent } from '../../evaluation/evaluation.component';
 import { TimetableComponent } from '../../timetable/timetable.component';
->>>>>>> e2f7420d15a28ab6ce2233779166e11a696992c9
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -38,10 +35,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'marks',     component: MarksComponent},
     { path: 'classCoordination',     component: ClassCoordinationComponent},
     { path: 'addNotification',     component: AddNotificationComponent},
-<<<<<<< HEAD
     { path: 'viewStudentDetails',  component:  ViewStudentDetailsComponent},
-=======
     { path: 'evaluation',     component: EvaluationComponent},
     { path: 'timetable',     component: TimetableComponent},
->>>>>>> e2f7420d15a28ab6ce2233779166e11a696992c9
 ];

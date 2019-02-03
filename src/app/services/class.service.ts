@@ -76,29 +76,18 @@ export class ClassService {
       .pipe(map(res => res.json()));
   }
 
-<<<<<<< HEAD
-   getStudentEnrolledClass(data){
-    let headers = new Headers();
-    headers.append('Cotent-type','application/json');
-    return this.http.post(hostAddress+'/class/getclassDetailsFromStudentId',data,{headers: headers}) //http://localhost:3000/
-    .pipe(map(res => res.json())); 
-  }
+
   
-  getStudentsForClass(ClassId){
-=======
+
   getStudentEnrolledClass(data) {
->>>>>>> e2f7420d15a28ab6ce2233779166e11a696992c9
     let headers = new Headers();
     headers.append('Cotent-type', 'application/json');
     return this.http.post(hostAddress + '/class/getclassDetailsFromStudentId', data, { headers: headers }) //http://localhost:3000/
       .pipe(map(res => res.json()));
   }
-<<<<<<< HEAD
 
-  getTeacherClasses(userId){
-=======
+
   getStudentsForClass(ClassId) {
->>>>>>> e2f7420d15a28ab6ce2233779166e11a696992c9
     let headers = new Headers();
     headers.append('Cotent-type', 'application/json');
     return this.http.post(hostAddress + '/class/getAllstudentDetailsOfAclass', ClassId, { headers: headers })
@@ -113,3 +102,4 @@ export class ClassService {
     .pipe(map(res => res.json()));
 }
 }
+ 

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ValidateService } from '../../Services/validate.service';
 import { UserServiceService } from '../../Services/user-service.service';
 import { NotificationsService } from '../../Services/notifications.service';
-import { from } from 'rxjs';
+//import { from } from 'rxjs';
 
 @Component({
   selector: 'app-student',
@@ -38,7 +38,7 @@ export class StudentComponent implements OnInit {
     //console.log(value);
     if (value.length < 10) {
       console.log("Check nic number");
-      this.showNOtification("Check NIC number");
+      this.showNOtification("please check your NIC number");
       return false; 
     }
     for (let i = 0; i < this.elements.length; i++) {

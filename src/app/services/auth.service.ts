@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { map } from 'rxjs/operators';
-//import { JwtHelperService } from '@auth0/angular-jwt';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
-//const helper = new JwtHelperService();
+const helper = new JwtHelperService();
 const hostAddress = "http://139.59.66.58:3000"//"http://localhost:3000" 
 
 @Injectable({
@@ -81,8 +81,8 @@ export class AuthService {
 
   loggedIn(){
     this.loadToken();
-  //return helper.isTokenExpired(this.authToken);
-    return false;
+    return helper.isTokenExpired(this.authToken);
+    //return false;
   }
   logout(){
     this.authToken =null;

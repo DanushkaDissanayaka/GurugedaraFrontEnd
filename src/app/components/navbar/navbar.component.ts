@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { ROUTES } from '../sidebar/sidebar.component';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { Router } from '@angular/router';
+import {AuthService} from '../../services/auth.service'
 
 @Component({
   selector: 'app-navbar',
@@ -16,15 +17,18 @@ export class NavbarComponent implements OnInit {
     private msg = [{title:"message1"},{title:"MESSAGE2"},{title:"MESSAGE3"}]
     private messageNumber :any
 
-    constructor(location: Location,  private element: ElementRef, private router: Router) {
+    constructor(location: Location,  private element: ElementRef, private router: Router , private authservice:AuthService) {
     }
 
     ngOnInit(){
         this.notificationNumber = this.notifications.length;
         this.messageNumber = this.msg.length;
     }
+
     logout(){
         console.log("Logout works");
+        this.router.navigate(['login']);
+        this.authservice.logout();
     }
 
 }

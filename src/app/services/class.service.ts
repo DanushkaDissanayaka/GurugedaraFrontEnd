@@ -108,5 +108,13 @@ addmarks(data){
   return this.http.post(hostAddress + '/mark/addMarks', data, { headers: headers }) //http://localhost:3000/
     .pipe(map(res => res.json()));
 }
+
+addFee(data){
+  let headers = new Headers();
+  headers.append('Cotent-type', 'application/json');
+  return this.http.post(hostAddress + '/fee/addfee', data, { headers: headers }) //http://localhost:3000/
+    .pipe(map(res => res.json()));
+}
+
 }
  

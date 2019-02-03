@@ -29,7 +29,7 @@ const user = {
 this.authService.authendicateUser(user).subscribe(data =>{
   if(data.success){
     this.authService.storeUserData(data.token , data.user);
-    this.authService.addUserData(data.role,data.userId);
+    this.authService.addUserData(data.userId,data.role);
     //console.log(data.token);
     //this.toastr.info('you are now login');
     console.log("you are now login");

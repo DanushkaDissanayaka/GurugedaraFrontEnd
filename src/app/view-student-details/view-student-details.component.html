@@ -8,9 +8,21 @@
                         <p class="card-category"></p>
                     </div>
                     <div class="card-body">
-                      
-                           
-                                        
+
+
+                        
+
+
+                        <tr *ngFor="let student of studentList">
+                            <td>
+                                {{student.UserID}}
+                            </td>
+                            <td>
+                                {{student.FirstName}} {{student.MiddleName}} {{student.LastName}}
+                            </td>
+                        </tr>
+
+
 
 
                     </div>

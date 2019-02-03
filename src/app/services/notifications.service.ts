@@ -10,7 +10,7 @@ export class NotificationsService {
   showNotification(from, align,message,type) {
     const state = ['', 'info', 'success', 'warning', 'danger'];
 
-    const color = 4
+    const color = type
     
 
     $.notify({
@@ -35,5 +35,18 @@ export class NotificationsService {
           '<a href="{3}" target="{4}" data-notify="url"></a>' +
           '</div>'
       });
+  }
+  
+  alertDanger(msg){
+    this.showNotification('top','right',msg,4)
+  }
+  alertSucceess(msg){
+    this.showNotification('top','right',msg,2)
+  }
+  alertInfo(msg){
+    this.showNotification('top','right',msg,1)
+  }
+  alertWarning(msg){
+    this.showNotification('top','right',msg,3)
   }
 }

@@ -45,50 +45,12 @@ export class AuthService {
       .pipe(map(res => res.json()));
   }
 
-  addSubject(data){
-    let headers = new Headers();
-    headers.append('Cotent-type','application/json');
-    return this.http.post(hostAddress+'/subject/addsubject',data,{headers: headers}) //http://localhost:3000/
-      .pipe(map(res => res.json()));
-  }
-
-  addClass(data){
-    let headers = new Headers();
-    headers.append('Cotent-type','application/json');
-    return this.http.post(hostAddress+'/class/addClasses',data,{headers: headers}) //http://localhost:3000/
-      .pipe(map(res => res.json()));
-  }
-
-  getsubjects(){
-    let headers = new Headers();
-    headers.append('Cotent-type','application/json');
-    return this.http.get(hostAddress +'/subject/getSubject',{headers: headers})
-    .pipe(map(res => res.json()));
-  }
-
-  addLocation(data){
-    let headers = new Headers();
-    headers.append('Cotent-type','application/json');
-    return this.http.post(hostAddress+'/location/addlocation',data,{headers: headers}) //http://localhost:3000/
-      .pipe(map(res => res.json()));
-  }
-
-
   dltLocation(data){
     let headers = new Headers();
     headers.append('Cotent-type','application/json');
     return this.http.post(hostAddress+'/location/deleteLocation',data,{headers: headers}) //http://localhost:3000/
       .pipe(map(res => res.json()));
   }
-
-  getLocation(){
-    let headers = new Headers();
-    headers.append('Cotent-type','application/json');
-    return this.http.get(hostAddress+'/location/getLocation',{headers: headers}) //http://localhost:3000/
-      .pipe(map(res => res.json()));
-  }
-
- 
 
   enrollStudent(data){
     let headers = new Headers();
@@ -117,11 +79,11 @@ export class AuthService {
     localStorage.setItem('role' , role);
   }
 
-  /*loggedIn(){
+  loggedIn(){
     this.loadToken();
-  return helper.isTokenExpired(this.authToken);
-    //return true;
-  }*/
+  //return helper.isTokenExpired(this.authToken);
+    return false;
+  }
   logout(){
     this.authToken =null;
     this.user =null;

@@ -20,45 +20,35 @@
             <div class="card-body">
               <div class="tab-content">
                 
-                  <form (submit)="register()">
+                  <form (submit)="add()">
                       <div class="row">
                           <div class="col-md-4">
                               <div class="btn-group">
-                                  <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">ClassId</button>
-                                
-                                  <div class="dropdown-menu">
-                                    <a class="dropdown-item"  (click)="setDropDwonName(2010)">2010</a>
-                                   
-                                    
-                                  </div>
+                                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      {{classDropdown}}
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+                                        <a class="dropdown-item" *ngFor="let class of classList" (click)="classdropfun(class.title,class.ClassID)">{{ class.title }}</a>
+                                      </div>
                               </div>
-                          </div>
-                        
-                        
-                        
+                            </div>
                             <div class="col-md-4">
                                 <div class="btn-group">
-                                    <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                      aria-expanded="false">TypeId</button>
-                                  
-                                    <div class="dropdown-menu">
-                                      <a class="dropdown-item"  (click)="setDropDwonName(2010)">2010</a>
-                                     
-                                      
-                                    </div>
-                                </div>
+                                    <button class="btn btn-primary dropdown-toggle mr-4" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                      aria-expanded="false">{{typedropDown}}</button>
+                                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+                                          <a class="dropdown-item" *ngFor="let TypeId of TypeList" (click)="typedropfun(TypeId.name,TypeId.typeId)">{{ TypeId.name }}</a>
+                                        </div>
+                                </div> 
                             </div>
                           </div>
 <br>
 <br>
-                      
-
-                    
+                                      
                     <div class="col">
                       <div class="col-md-6">
                         <mat-form-field class="example-full-width">
-                          <input matInput placeholder="Title" name="Title" [(ngModel)]="Text" type="password" type="password">
+                          <input matInput placeholder="Title" name="Title" [(ngModel)]="Title" type="text" type="text">
                         </mat-form-field>
                       </div>
                       <div class="col-md-6">
@@ -69,7 +59,7 @@
                       </div>
                     </div>
                     
-                    <button mat-raised-button type="submit" class="btn btn-danger pull-right">Send</button>
+                    <button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="setDropDownName(class)">Send</button>
                     <div class="clearfix"></div>
                   </form> 
 

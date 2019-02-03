@@ -30,7 +30,6 @@ import { AddNotificationComponent } from '../../add-notification/add-notificatio
 import { EvaluationComponent } from '../../evaluation/evaluation.component';
 import { TimetableComponent } from '../../timetable/timetable.component';
 
-
 import {
   MatButtonModule,
   MatInputModule,

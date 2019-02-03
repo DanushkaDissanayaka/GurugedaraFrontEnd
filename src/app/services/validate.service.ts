@@ -31,4 +31,13 @@ export class ValidateService {
     
   }
 
+  validateUndefined(data:any){
+    if(data == undefined){
+      return false;
+    }
+    else{
+      return true;
+    }
+  }
+
 }

@@ -47,4 +47,7 @@ export class AddmarksComponent implements OnInit {
         +0
       })
   }
+  collectmarks(marks,userid){
+    console.log(marks + userid);
+  }
 } 

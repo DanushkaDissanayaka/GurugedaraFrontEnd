@@ -22,9 +22,9 @@ export class AddsubjectComponent implements OnInit {
     this.classservice.getsubjects().subscribe(data => {
       // console.log(data);
       this.subject = data.data;
-    });
+    });  
   }
-
+  
   addSubject() {
     if (!this.validateservice.validateUndefined(this.subjectId)) {
       this.notificationservice.alertWarning("please enter subject ID");

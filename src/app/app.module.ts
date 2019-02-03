@@ -23,8 +23,7 @@ import { TeacherComponent } from './register-user/teacher/teacher.component';
 import { OfficeUserComponent } from './register-user/office-user/office-user.component';
 import { AdminComponent } from './register-user/admin/admin.component';
 import { AddNotificationComponent } from './add-notification/add-notification.component';
-import { EvaluationComponent } from './evaluation/evaluation.component';
-import { TimetableComponent } from './timetable/timetable.component';
+
 
 @NgModule({
   imports: [
@@ -41,8 +40,7 @@ import { TimetableComponent } from './timetable/timetable.component';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    EvaluationComponent,
-    TimetableComponent,
+    
     
   ],
   providers: [],

@@ -37,13 +37,13 @@ export class StudentComponent implements OnInit {
     //console.log(value);
     if (value.length < 10) {
       console.log("Check nic number");
-      this.showNOtification("Check nic number");
+      this.showNOtification("Check NIC number");
       return false; 
     }
     for (let i = 0; i < this.elements.length; i++) {
       if (this.elements[i] == value) {
         console.log("Already in place");
-        this.showNOtification("Already in place");
+        this.showNOtification("Already inserted");
         return false;
       }
     }
@@ -79,38 +79,82 @@ export class StudentComponent implements OnInit {
     }
     //console.log(this.elements.length);
 
+   
     // Required Fields
-    if (this.elements.length == 0) {
+    if (this.FirstName == undefined ) {
+      console.log('First name is required');
+      this.showNOtification ('First name is required');
+      return false;
+    }
+
+    if (this.LastName == undefined) {
+      console.log('Last name is required');
+      this.showNOtification ('Last name is required');
+      return false;
+    }
+
+    if (this.DOB == undefined ) {
+      console.log('Birthday is required');
+      this.showNOtification ('Birthday is required');
+      return false;
+    }
+
+    if (this.email == undefined ) {
+      console.log('Email is required');
+      this.showNOtification ('Email is required');
+      return false;
+    }
+
+    if (this.ContactNo == undefined ) {
+      console.log('Contact number is required');
+      this.showNOtification ('Contact number is required');
+      return false;
+    }
+
+    if (this.password == undefined ) {
+      console.log('Password is required');
+      this.showNOtification ('Password is required');
+      return false;
+    }
+
+    if (this.repassword == undefined ) {
+      console.log('Password confirmation is required');
+      this.showNOtification ('Password confirmation is required');
+      return false;
+    }
+
+    if (this.AddStreet == undefined || this.AddCity == undefined ) {
+      console.log('Street and City of address fields are required');
+      this.showNOtification ('All address fields are required');
+      return false;
+    }
+
+     // Required Fields
+     if (this.elements.length == 0) {
       console.log('You must Add atleast one guardian NIC');
       this.showNOtification ('You must Add atleast one guardian NIC');
       return false;
     }
-    // Required Fields
-    if (this.FirstName == undefined || this.LastName == undefined) {
-      console.log('First name and Last name is required');
-      this.showNOtification ('First name and Last name is required');
-      return false;
-    }
 
-    if (!this.validateService.validateRegister(user)) {
+    // if (!this.validateService.validateRegister(user)) {
       //console.log('Please fill in all fields');
-      console.log('Please fill in all fields');
-      this.showNOtification ('Please fill in all fields');
-      return false;
-    }
+      // console.log('Please fill in all fields');
+      // this.showNOtification ('Please fill in all fields');
+      // return false;
+    // }
 
     // validate email
 
     if (!this.validateService.validateEmail(user.email)) {
       //console.log('Please use valid email');
-      console.log('Please use valid email');
-      this.showNOtification('Please use valid email');
+      console.log('Please enter a valid Email');
+      this.showNOtification('Please enter a valid Email');
       return false;
     }
     if (!this.validateService.validatePassword(user.password, this.repassword)) {
       //console.log('Password not match');
       console.log('Password not match');
-      this.showNOtification('Password not match');
+      this.showNOtification('Password not match.Please re-enter your password');
       return false;
     }
     // Register user

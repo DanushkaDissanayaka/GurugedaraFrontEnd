@@ -58,25 +58,67 @@ export class TeacherComponent implements OnInit {
 
 
     // Required Fields
-    if (this.FirstName == undefined || this.LastName == undefined) {
-      console.log('First name and Last name is required');
-      this.showNOtification ('First name and Last name is required');
+    if (this.FirstName == undefined ) {
+      console.log('First name  is required');
+      this.showNOtification ('First name is required');
       return false;
     }
 
-    if (!this.validateService.validateRegister(user)) {
-      //console.log('Please fill in all fields');
-      console.log('Please fill in all fields');
-      this.showNOtification ('Please fill in all fields');
+    if (this.LastName == undefined ) {
+      console.log('LastName  is required');
+      this.showNOtification ('LastName is required');
       return false;
     }
+
+    if (this.DOB == undefined ) {
+      console.log('Birthday  is required');
+      this.showNOtification ('Birthday is required');
+      return false;
+    }
+
+    if (this.email == undefined ) {
+      console.log('E-mail is required');
+      this.showNOtification ('E-mail is required');
+      return false;
+    }
+
+    if (this.ContactNo == undefined ) {
+      console.log('Contact number is required');
+      this.showNOtification ('Contact number is required');
+      return false;
+    }
+
+    if (this.password == undefined ) {
+      console.log('Password is required');
+      this.showNOtification ('Password is required');
+      return false;
+    }
+
+    if (this.repassword == undefined ) {
+      console.log('Password confirmation is required');
+      this.showNOtification ('Password confirmation is required');
+      return false;
+    }
+
+    if (this.AddStreet == undefined || this.AddCity == undefined ) {
+      console.log('Street and City of address fields are required');
+      this.showNOtification ('Street and City of address fields are required');
+      return false;
+    }
+
+    // if (!this.validateService.validateRegister(user)) {
+      //console.log('Please fill in all fields');
+      // console.log('Please fill in all fields');
+      // this.showNOtification ('Please fill in all fields');
+      // return false;
+    //}
 
     // validate email
 
-    if (!this.validateService.validateEmail(user.email)) {
+   if (!this.validateService.validateEmail(user.email)) {
       //console.log('Please use valid email');
-      console.log('Please use valid email');
-      this.showNOtification('Please use valid email');
+      console.log('Please enter a valid Email');
+      this.showNOtification('Please enter a valid Email');
       return false;
     }
     if (!this.validateService.validatePassword(user.password, this.repassword)) {

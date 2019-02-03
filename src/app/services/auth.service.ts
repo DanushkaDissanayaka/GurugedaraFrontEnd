@@ -45,25 +45,12 @@ export class AuthService {
       .pipe(map(res => res.json()));
   }
 
-
-
-
-
-  
-
-
-
-
   dltLocation(data){
     let headers = new Headers();
     headers.append('Cotent-type','application/json');
     return this.http.post(hostAddress+'/location/deleteLocation',data,{headers: headers}) //http://localhost:3000/
       .pipe(map(res => res.json()));
   }
-
-  
-
- 
 
   enrollStudent(data){
     let headers = new Headers();
@@ -92,11 +79,11 @@ export class AuthService {
     localStorage.setItem('role' , role);
   }
 
-  /*loggedIn(){
+  loggedIn(){
     this.loadToken();
-  return helper.isTokenExpired(this.authToken);
-    //return true;
-  }*/
+  //return helper.isTokenExpired(this.authToken);
+    return false;
+  }
   logout(){
     this.authToken =null;
     this.user =null;

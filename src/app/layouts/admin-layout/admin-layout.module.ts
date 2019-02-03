@@ -28,7 +28,6 @@ import { AddmarksComponent } from '../../marks/addmarks/addmarks.component';
 import { ViewmarksComponent } from '../../marks/viewmarks/viewmarks.component';
 import { AddNotificationComponent } from '../../add-notification/add-notification.component';
 
-
 import {
   MatButtonModule,
   MatInputModule,

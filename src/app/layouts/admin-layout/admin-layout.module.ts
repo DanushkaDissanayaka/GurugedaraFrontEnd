@@ -30,6 +30,8 @@ import { AddNotificationComponent } from '../../add-notification/add-notificatio
 import { ViewStudentDetailsComponent } from '../../view-student-details/view-student-details.component';
 import { EvaluationComponent } from '../../evaluation/evaluation.component';
 import { TimetableComponent } from '../../timetable/timetable.component';
+import { EnterPaymentsComponent } from '../../enter-payments/enter-payments.component';
+
 
 import {
   MatButtonModule,
@@ -79,6 +81,7 @@ import {
     ViewStudentDetailsComponent,
     EvaluationComponent,
     TimetableComponent,
+    EnterPaymentsComponent,
   ]
 })
 

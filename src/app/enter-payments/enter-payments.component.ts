@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EnterPaymentsComponent implements OnInit {
 
+  dropDownName = "Select ClassID"
+
   constructor() { }
 
   ngOnInit() {
   }
+
+
 
 }

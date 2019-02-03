@@ -64,7 +64,7 @@ import { EnterPaymentsComponent } from './enter-payments/enter-payments.componen
     
     LoginComponent,
     RegisterComponent,
-    EnterPaymentsComponent,
+  
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

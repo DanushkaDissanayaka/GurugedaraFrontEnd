@@ -38,6 +38,7 @@ export class PaymentsComponent implements OnInit {
   dropDownStName = "Student name"
   studentId: any
   classId: any
+  payment:any
 
 
   constructor(
@@ -90,5 +91,12 @@ export class PaymentsComponent implements OnInit {
       console.log(this.classTitle[0]);
     });
 
+}
+getPayment() {
+  this.classservice.getStudentPaymentDetails({ UserId: this.userid, ClassId: this.classId }).subscribe(result => {
+    console.log(result);
+    this.payment = result.data;
+    console.log(this.payment);
+  })
 }
 }

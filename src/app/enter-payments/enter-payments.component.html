@@ -10,42 +10,62 @@
                     <div class="card-body">
 
                         <div class="row">
-                        <div class="col-md-3">
-                            <mat-form-field class="example-full-width">
-                                <input matInput placeholder="Student ID" type="txt" >
-                            </mat-form-field>
-                        </div>
-                    
+                            <div class="col-md-3">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Student's Index" name="teacherID" [(ngModel)]="studentID"
+                                        (ngModelChange)="valuechange($event)">
+                                </mat-form-field>
+                            </div>
 
 
-                        <div class="col-md-4">
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    {{dropDownName}}
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" *ngFor="let class of classList" (click)="setDropDownName(class)">{{class.Title
-                                        }}</a>
+
+                            <div class="col-md-3">
+                                <div class="btn-group">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">{{dropDownTitle}}</button>
+
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" (click)="setClasstitle(ele.ClassID,ele.Title )" *ngFor="let ele of classTitle">{{ele.Title}}</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="col-md-3">
-                            <mat-form-field class="example-full-width">
-                                <input matInput placeholder="Assignment Date" type="date">
-                            </mat-form-field>
-                        </div>
 
-                        <button type="button" class="btn btn-warning">Submit</button>
-</div>
+
+            
+                           
+
+
+                               
+                        
+
+
+                            <div class="col-md-3">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Assignment Date" type="date" >
+                                </mat-form-field>
+                            </div>
+
+
+
+                            <div class="col-md-3">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Amount" 
+                                             disabled>
+                                    </mat-form-field>
+                                </div>
+
+
+                            <button type="button" class="btn btn-warning" (click) ="submit()">Submit</button>
+                       
+
+                        </div>
 
 
 
                     </div>
                 </div>
             </div>
-            </div>
-            </div>
-            </div> 
-           
+        </div>
+    </div>
+</div>

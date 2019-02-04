@@ -99,11 +99,11 @@ export class UserProfileComponent implements OnInit {
     }
     console.log(user);
 
-    // this.userservice.updateUserProfile(user).subscribe(result => {
-    //   console.log(result);
-    //   this.updateedusr = result.data;
-    //   console.log(this.updateedusr);
-    // });
+    this.userservice.updateUserProfile(user).subscribe(result => {
+      console.log(result);
+      this.updateedusr = result.data;
+      console.log(this.updateedusr);
+    });
   }
 }
 

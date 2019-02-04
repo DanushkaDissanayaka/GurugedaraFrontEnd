@@ -39,5 +39,29 @@ export class ValidateService {
       return true;
     }
   }
+  
+  ConvertDayOfWeek(no: number){
+    if(no==0){
+      return "Sunday";
+    }
+    else if(no==1){
+      return "Monday";
+    }
+    else if(no==2){
+      return "Tuesday";
+    }
+    else if(no==3){
+      return "Wednesday";
+    }
+    else if(no==4){
+      return "Thursday";
+    }
+    else if(no==5){
+      return "Friday";
+    }
+    else if(no==6){
+      return "Saturday";
+    }
+  }
 
 }

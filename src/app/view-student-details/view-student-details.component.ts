@@ -41,4 +41,6 @@ export class ViewStudentDetailsComponent implements OnInit {
 
 
 
+  
+
 }

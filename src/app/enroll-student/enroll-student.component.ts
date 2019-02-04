@@ -24,24 +24,25 @@ export class EnrollStudentComponent implements OnInit {
     private userservice: UserServiceService) { }
 
   ngOnInit() {
+    this.getstudentClass()
   }
 
 
 
-  valuechange(newValue) {
-    this.userservice.findUser({ userId: newValue }).subscribe(data => {
-      if (data.data.length) {
-        if (data.data[0].role == 'student') {
-          this.notificationservice.alertInfo("User found " + data.data[0].FirstName + " " + data.data[0].LastName);
-          this.getstudentClass(newValue);
-        }
-      }
-    });
-  }
+  // valuechange(newValue) {
+  //   this.userservice.findUser({ userId: newValue }).subscribe(data => {
+  //     if (data.data.length) {
+  //       if (data.data[0].role == 'student') {
+  //         this.notificationservice.alertInfo("User found " + data.data[0].FirstName + " " + data.data[0].LastName);
+  //         this.getstudentClass(newValue);
+  //       }
+  //     }
+  //   });
+  // }
 
 
-  getstudentClass(studentId: any) {
-    this.classservice.getStudentEnrolledClass({ userId: studentId }).subscribe(result => {
+  getstudentClass() {
+    this.classservice.getClassDetails().subscribe(result => {
       console.log(result);
       this.classTitle = result.data;
     });

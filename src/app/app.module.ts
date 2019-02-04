@@ -37,6 +37,7 @@ import {
 } from '@angular/material';
 import { ViewStudentDetailsComponent } from './view-student-details/view-student-details.component';
 import { EnterPaymentsComponent } from './enter-payments/enter-payments.component';
+import { EnrollStudentComponent } from './enroll-student/enroll-student.component';
 
 
 @NgModule({
@@ -64,6 +65,7 @@ import { EnterPaymentsComponent } from './enter-payments/enter-payments.componen
     
     LoginComponent,
     RegisterComponent,
+  
   
   ],
   providers: [AuthGuard],

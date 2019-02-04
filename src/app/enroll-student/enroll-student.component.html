@@ -1,0 +1,35 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title ">Enroll for Subjects</h4>
+            <p class="card-category"> </p>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Student's Index" type="txt" [(ngModel)]="description" name= "Description">
+                </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    {{ dropDownTitle}}
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" *ngFor="let class of classList" (click)="setClasstitle(ele)">{{ele.Title}}</a>
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="btn btn-warning" (click) = "onSubmit()">Enroll</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

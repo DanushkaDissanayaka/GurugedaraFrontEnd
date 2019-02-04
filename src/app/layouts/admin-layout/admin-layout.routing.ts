@@ -18,6 +18,7 @@ import { ViewStudentDetailsComponent } from '../../view-student-details/view-stu
 import { EvaluationComponent } from '../../evaluation/evaluation.component';
 import { TimetableComponent } from '../../timetable/timetable.component';
 import { EnterPaymentsComponent } from '../../enter-payments/enter-payments.component';
+import { EnrollStudentComponent } from '../../enroll-student/enroll-student.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -40,5 +41,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'evaluation',     component: EvaluationComponent},
     { path: 'timetable',     component: TimetableComponent},
     { path: 'EnterPayments',     component: EnterPaymentsComponent },
+    { path: 'EnrollStudent',     component: EnrollStudentComponent },
 
 ];

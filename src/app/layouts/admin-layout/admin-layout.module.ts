@@ -31,6 +31,7 @@ import { ViewStudentDetailsComponent } from '../../view-student-details/view-stu
 import { EvaluationComponent } from '../../evaluation/evaluation.component';
 import { TimetableComponent } from '../../timetable/timetable.component';
 import { EnterPaymentsComponent } from '../../enter-payments/enter-payments.component';
+import { EnrollStudentComponent } from '../../enroll-student/enroll-student.component';
 
 
 import {
@@ -82,6 +83,7 @@ import {
     EvaluationComponent,
     TimetableComponent,
     EnterPaymentsComponent,
+    EnrollStudentComponent,
   ]
 })
 

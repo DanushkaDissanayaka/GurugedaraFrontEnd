@@ -1,67 +1,67 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-danger">
-                        <h4 class="card-title">Edit Profile</h4>
-                        <p class="card-category">Complete your profile</p>
+                        <h3 class="card-title">Edit Profile</h3>
+                        <h4 class="card-category">Update Your Profile Here</h4>
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form (submit) = "editProfile()">
                             <div class="row">
-                                <div class="col-md-5">
+                                <div class="col-md-4">
                                     <mat-form-field class="example-full-width">
-                                        <input matInput placeholder={{UserID}} disabled>
-                                    </mat-form-field>
-                                </div>
-                                <div class="col-md-3">
-                                    <mat-form-field class="example-full-width">
-                                        <input matInput placeholder={{userData.ContactNo}}>
+                                        <input matInput placeholder={{UserID}} disabled >
                                     </mat-form-field>
                                 </div>
                                 <div class="col-md-4">
                                     <mat-form-field class="example-full-width">
-                                        <input matInput placeholder={{userData.Email}} type="email">
+                                        <input matInput placeholder={{userData.ContactNo}}  name="ContactNo" [(ngModel)]="ContactNo">
                                     </mat-form-field>
                                 </div>
-                            </div>
-                            <div class="row">
                                 <div class="col-md-4">
                                     <mat-form-field class="example-full-width">
-                                        <input matInput placeholder={{userData.FirstName}} type="text">
-                                    </mat-form-field>
-                                </div>
-                                <div class="col-md-3">
-                                    <mat-form-field class="example-full-width">
-                                        <input matInput placeholder={{userData.MiddleName}} type="text">
-                                    </mat-form-field>
-                                </div>
-                                <div class="col-md-5">
-                                    <mat-form-field class="example-full-width">
-                                        <input matInput placeholder={{userData.LastName}} type="text">
+                                        <input matInput placeholder={{userData.Email}} type="email" name="email" [(ngModel)]="email">
                                     </mat-form-field>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
                                     <mat-form-field class="example-full-width">
-                                        <input matInput placeholder= {{userData.AddNo}} type="text">
+                                        <input pattern="[A-Za-z]{3}" matInput placeholder={{userData.FirstName}} type="text" name="FirstName" [(ngModel)]="FirstName">
                                     </mat-form-field>
                                 </div>
-                                <div class="col-md-7">
+                                <div class="col-md-4">
                                     <mat-form-field class="example-full-width">
-                                        <input matInput placeholder= {{userData.AddStreet}} type="text">
+                                        <input matInput placeholder={{userData.MiddleName}} type="text" name="MiddleName" [(ngModel)]="MiddleName">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder={{userData.LastName}} type="text" name="LastName" [(ngModel)]="LastName">
                                     </mat-form-field>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-4">
                                     <mat-form-field class="example-full-width">
-                                        <input matInput placeholder= {{userData.AddCity}} type="text">
+                                        <input matInput placeholder= {{userData.AddNo}} type="text" name="AddNo" [(ngModel)]="AddNo">
                                     </mat-form-field>
                                 </div>
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder= {{userData.AddStreet}} type="text" name="AddStreet" [(ngModel)]="AddStreet">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder= {{userData.AddCity}} type="text" name="AddCity" [(ngModel)]="AddCity">
+                                        </mat-form-field>
+                                    </div>
+                               
                             </div>
+                            
                             <div class="row">
                                 <div class="col-md-12">
                                     <label>About Me</label>

@@ -1,25 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { ClassService } from 'app/services/class.service';
-import { NotificationsService } from '../services/notifications.service'
-import { ValidateService } from '../services/validate.service'
-import { UserServiceService } from '../services/user-service.service';
-import { AuthService } from '../services/auth.service';
+import { NotificationsService } from '../../services/notifications.service'
+import { ValidateService } from '../../services/validate.service'
+import { UserServiceService } from '../../services/user-service.service';
+import { AuthService } from '../../services/auth.service';
+
 
 @Component({
-  selector: 'app-enroll-student',
-  templateUrl: './enroll-student.component.html',
-  styleUrls: ['./enroll-student.component.scss'],
-  providers: [ClassService]
+  selector: 'app-un-enroll',
+  templateUrl: './un-enroll.component.html',
+  styleUrls: ['./un-enroll.component.scss']
 })
-export class EnrollStudentComponent implements OnInit {
+export class UnEnrollComponent implements OnInit {
 
-  dropDownTitle = "Select class"
+
+  dropDownTitle = "Select Class"
   classList: any[]
-  classId: any
-  classTitle: any
-  StudentID: any
-  OfficeuserId: any
-
+  classId:any
+  classTitle:any
+ // feedate:any
+  //amount:any
+  studentID:any
+  OfficeuserId:any
 
   constructor(private validateservice: ValidateService,
     private notificationservice: NotificationsService,
@@ -32,46 +34,36 @@ export class EnrollStudentComponent implements OnInit {
   }
 
 
+
   valuechange(newValue) {
     this.classTitle = [];
     this.dropDownTitle = "Select class";
     this.userservice.findUser({ userId: newValue }).subscribe(data => {
       if (data.data.length) {
         if (data.data[0].role == 'student') {
+          this.studentID = newValue;
           this.notificationservice.alertInfo("User found " + data.data[0].FirstName + " " + data.data[0].LastName);
-          this.getstudentClass();
+          this.getstudentClass(newValue);
         }
       }
     });
   }
 
-
-  getstudentClass() {
-    this.classservice.getClassDetails().subscribe(result => {
+  getstudentClass(studentId:string) {
+    this.classservice.getStudentEnrolledClass({userId:studentId}).subscribe(result => {
       console.log(result);
       this.classTitle = result.data;
     });
   }
 
-
-
-
   setClasstitle(value) {
     this.dropDownTitle = value.Title;
     this.classId = value.ClassID;
-  }
-
-  onSubmit() {
-    const data = {
-      userId: this.StudentID,
-      classId: this.classId,
-
     
+  }
+  onSubmit() {
 
-
-    }
-
-    if(!this.validateservice.validateUndefined(this.StudentID)){
+    if(!this.validateservice.validateUndefined(this.studentID)){
       this.notificationservice.alertWarning("Enter Student index number");
       return false;
     }
@@ -81,16 +73,22 @@ export class EnrollStudentComponent implements OnInit {
       return false;
     }
 
+    const data = {
+      userId: this.studentID,
+      classId: this.classId,
+    
+    }
     console.log(data);
 
 
     if (confirm('Are you sure? you want to submit')) {
-      this.authservice.enrollStudent(data).subscribe(data => {  //auth service.ts
+      this.authservice. UnenrollStudent(data).subscribe(data => {  //auth service.ts
         if (data.success) {
           this.notificationservice.alertInfo(data.msg);
-          this.StudentID = ""
-          this.classId = ""
-          this.dropDownTitle = "Select class"
+
+          this.studentID=undefined
+          this.classId=undefined
+          this.dropDownTitle = "Select ClassID"
         }
         else {
           this.notificationservice.alertDanger(data.msg);
@@ -100,8 +98,6 @@ export class EnrollStudentComponent implements OnInit {
       // Do nothing!
     }
   }
-
-
 
 
 }

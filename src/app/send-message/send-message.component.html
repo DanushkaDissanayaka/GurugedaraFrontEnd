@@ -25,7 +25,7 @@
                     <div class="btn-group">
 
                         <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown" aria-haspopup="true"
-                          aria-expanded="false">{{SelectRole}}</button>
+                          aria-expanded="false">{{role}}</button>
         
                         <div class="dropdown-menu">
                           <a class="dropdown-item" (click)="setDropDwonRole(el.name)" *ngFor="let el of Role">{{el.name}}</a>
@@ -40,12 +40,17 @@
                     <div class="col">
                       <div class="col-md-6">
                         <mat-form-field class="example-full-width">
-                          <input matInput placeholder="StudentId" name="StudentId" [(ngModel)]="StudentId" type="text" type="text">
+                          <input matInput placeholder="StudentId" name="resiverUserId" [(ngModel)]="resiverUserId" type="text" type="text">
                         </mat-form-field>
                       </div>
                       <div class="col-md-6">
+                          <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Title here" name="title" [(ngModel)]="title" type="text" type="text">
+                          </mat-form-field>
+                        </div>
+                      <div class="col-md-6">
                         <mat-form-field class="example-full-width">
-                            <textarea matInput name="Message" [(ngModel)]="Message" type="text" placeholder="Text here" cols="10" rows="3"></textarea>
+                            <textarea matInput name="msg" [(ngModel)]="msg" type="text" placeholder="Text here" cols="10" rows="3"></textarea>
                         </mat-form-field>
                         
                       </div>

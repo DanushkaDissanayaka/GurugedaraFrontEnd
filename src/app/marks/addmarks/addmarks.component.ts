@@ -3,6 +3,7 @@ import { ClassService } from 'app/services/class.service';
 import { NotificationsService } from '../../services/notifications.service'
 import { ValidateService } from '../../services/validate.service'
 
+
 @Component({
   selector: 'app-addmarks',
   templateUrl: './addmarks.component.html',
@@ -24,6 +25,7 @@ export class AddmarksComponent implements OnInit {
     private Classes: ClassService,
     private notification: NotificationsService,
     private validateservice: ValidateService,
+    
   ) { }
 
   ngOnInit() {
@@ -31,19 +33,19 @@ export class AddmarksComponent implements OnInit {
   }
 
   setDropDownName(name) {
-    // console.log(name.ClassID)
+    
     this.getStudentsOfClass(name.ClassID);
     this.dropDownName = name.Title;
     this.classId = name.ClassID
-    // console.log(this.dropDownName);
+
   }
 
   getAllClassID() {
-    this.Classes.getClasses()
+    this.Classes.getClasses() ///class Service
       .subscribe(result => {
-        // console.log(result.data)
+       
         this.classList = result.data
-        // console.log(this.classList);
+      
       })
   }
 
@@ -62,26 +64,28 @@ export class AddmarksComponent implements OnInit {
     console.log(newValue.target.value);
     console.log(newValue.taeget);
 
+    this.date= "";
+    this.dropDownName = "Select class";
+    this.description ="";
+
   }
 
-  addMarks(){
 
-  }
 
   
   collectmarks(a, id) {
 
-    if (!this.validateservice.validateUndefined(this.date)) {
-      this.notification.alertWarning("Date shuld not be empty");
-      a.target.value = "";
-      return false;
-    }
+    // if (!this.validateservice.validateUndefined(this.date)) {
+    //   this.notification.alertWarning("Date shuld not be empty");
+    //   a.target.value = "";
+    //   return false;
+    // }
 
-    if (!this.validateservice.validateUndefined(this.description)) {
-      this.notification.alertWarning("Add discription first");
-      a.target.value = "";
-      return false;
-    }
+    //if (!this.validateservice.validateUndefined(this.description)) {
+    //  this.notification.alertWarning("Add discription first");
+     // a.target.value = "";
+     // return false;
+    //}
 
     if (!this.validateservice.validateUndefined(this.classId)) {
       this.notification.alertWarning("Select Class First")
@@ -123,6 +127,34 @@ export class AddmarksComponent implements OnInit {
   }
 
   onSubmit() {
+    const data = {
+     // userId: this.StudentID,
+      classId: this.classId,
+      date:this.date,
+      description:this.description
+    
+
+
+    }
+
+    if(!this.validateservice.validateUndefined(this.classId)){
+      this.notification.alertWarning("Select Class First");
+      return false;
+    }
+
+    if(!this.validateservice.validateUndefined(this.date)){
+      this.notification.alertWarning("Date should not be empty");
+      return false;
+    }
+
+    if(!this.validateservice.validateUndefined(this.description)){
+      this.notification.alertWarning("Add Description First");
+      return false;
+    }
+
+
+
+
     if (confirm('Are you sure? you want to submit')) {
       this.Classes.addmarks({marks:this.marks}).subscribe(data => {
         if (data.success) {

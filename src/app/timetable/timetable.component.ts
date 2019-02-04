@@ -14,9 +14,12 @@ export class TimetableComponent implements OnInit {
   gurdianDetectflag :boolean = false
   studentName: string
   guardianid: string
-  dropDownStName: string
+  dropDownStName: string = "Student name"
   studentId: any
   classTitle: any
+  classDetails: any
+  //ID : any = elem.userId
+  
 
   constructor(
     private classservice: ClassService,
@@ -30,17 +33,22 @@ export class TimetableComponent implements OnInit {
     if(this.role =="guardian"){
       this.gurdianDetectflag = true;
 
-      this.userservice.getStudentIdFromGuardianId({ username: this.guardianid }).subscribe(result => {
+      this.userservice.getStudentIdFromGuardianId({ username: this.userId }).subscribe(result => {
         console.log(result);
         this.studentName = result.data;
         console.log(this.studentName);
 
       })
     }
+
+    else{
+      this.getstudentClass(this.userId);
+    }
   }
 
   setStudentName(id: string, value: string) {
     this.dropDownStName = value;
+    console.log(this.dropDownStName);
     this.studentId = id;
     this.getstudentClass(id);
   }
@@ -49,8 +57,23 @@ export class TimetableComponent implements OnInit {
     this.classservice.getStudentEnrolledClass({ userId: studentId }).subscribe(result => {
       console.log(result);
       this.classTitle = result.data;
-      console.log(this.classTitle[0]);
+      console.log(this.classTitle);
     });
   }
+
+  getClassDetail(){
+    this.classservice.getClassDetails().subscribe(result => {
+      console.log(result);
+      this.classDetails = result.data;
+      console.log(this.classDetails);
+    });
+  }
+
+  // getClassDetails() {
+  //   let headers = new Headers();
+  //   headers.append('Cotent-type', 'application/json');
+  //   return this.http.get(hostAddress + '/class/getClassDetails', { headers: headers })
+  //     .pipe(map(res => res.json()));
+  // }
 
 }

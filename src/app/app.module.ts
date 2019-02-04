@@ -40,6 +40,8 @@ import { EnterPaymentsComponent } from './enter-payments/enter-payments.componen
 import { EnrollStudentComponent } from './enroll-student/enroll-student.component';
 import { SendMessageComponent } from './send-message/send-message.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { EditPaymentsComponent } from './enter-payments/edit-payments/edit-payments.component';
+
 
 
 @NgModule({
@@ -63,10 +65,11 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    
+
     
     LoginComponent,
     RegisterComponent,
+   
     //ChangePasswordComponent,
     //SendMessageComponent,
   

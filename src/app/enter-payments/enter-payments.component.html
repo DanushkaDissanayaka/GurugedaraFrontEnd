@@ -18,8 +18,8 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="btn-group">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">{{dropDownTitle}}</button>
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{dropDownTitle}}</button>
 
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" (click)="setClasstitle(ele)" *ngFor="let ele of classTitle">{{ele.Title}}</a>
@@ -28,17 +28,35 @@
                             </div>
                             <div class="col-md-3">
                                 <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Assignment Date" type="date" name="feedate" [(ngModel)]="feedate" >
+                                    <input matInput placeholder="Payment Date" type="date" name="feedate" [(ngModel)]="feedate">
                                 </mat-form-field>
                             </div>
                             <div class="col-md-3">
-                                    <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="{{amount}}" 
-                                             disabled>
-                                    </mat-form-field>
-                                </div>
-                            <button type="button" class="btn btn-warning" (click) ="submit()">Submit</button>
+                                <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="{{amount}}" disabled>
+                                </mat-form-field>
+                            </div>
+                            <button type="button" class="btn btn-warning" (click)="submit()">Submit</button>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Edit Payments</h4>
+                        <p class="card-category"> </p>
+                    </div>
+                    <div class="card-body">
+                            <app-edit-payments></app-edit-payments>
                     </div>
                 </div>
             </div>

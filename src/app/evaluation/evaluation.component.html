@@ -1,3 +1,100 @@
-<p>
-  evaluation works!
-</p>
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-info">
+            <h3 class="card-title " align="Center">Your Achievememt Records</h3>
+            <h4 class="card-category"> Choose your details required below</h4>
+          </div>
+          <div class="card-body">
+            <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <div class = "container">
+            <div class="row">
+
+              <div class="btn-group">
+                <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">{{dropDownname}}</button>
+
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" (click)="setDropDwonName(el.id,el.value)" *ngFor="let el of Year">{{el.value}}</a>
+                 
+
+                </div>
+              </div>
+              <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+              <div class="btn-group">
+                <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">{{dropDownMonth}}</button>
+
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" (click)="setDropDwonName2(el.id,el.name)" *ngFor="let el of month">{{el.name}}</a>
+
+
+                </div>
+              </div>
+
+              <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+              <div class="btn-group" *ngIf="gurdianDetected">
+                <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">{{dropDownStName}}</button>
+
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" (click)="setStudentName(elem.UserID , elem.FirstName)" *ngFor="let elem of studentName">{{elem.FirstName}}</a>
+                </div>
+              </div>
+              <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+              <div class="btn-group">
+                <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">{{dropDownTitle}}</button>
+
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" (click)="setClasstitle(ele.ClassID,ele.Title )" *ngFor="let ele of classTitle">{{ele.Title}}</a>
+                </div>
+              </div>
+              <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+              <br>
+
+
+              <div class="btn-group">
+                <button class="btn btn-primary pull-right waves-effect" type="submit" (click)="getAttendance()"> Submit
+                </button>
+              </div>
+
+
+            </div>
+
+            </div>
+
+            <br>
+            <br>
+            <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead class="">
+                  <th> </th>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Marks</th>
+                  <th>Discription</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let el of attendance" >
+                    <td> </td>
+                    <td>{{el.atDate}}</td>
+                    <td>{{el.atTime}}</td>
+                    <td>{{el.marks}}</td>
+                    <td>{{el.description}}</td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+            <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

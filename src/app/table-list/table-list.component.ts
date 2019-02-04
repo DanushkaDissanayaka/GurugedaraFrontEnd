@@ -8,8 +8,21 @@ import { Component, OnInit } from '@angular/core';
 export class TableListComponent implements OnInit {
 
   constructor() { }
-
+ userId:string
+ role:string
+ gurdianDetectflag :boolean = false
   ngOnInit() {
+    this.userId = localStorage.getItem("userId");
+    this.role = localStorage.getItem("role");
+    if(this.role =="guardian"){
+      this.gurdianDetectflag = true;
+    }
+    else if(this.role == "student"){
+
+    }
+    else{
+
+    }
   }
 
 }

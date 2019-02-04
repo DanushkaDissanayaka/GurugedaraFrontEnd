@@ -59,5 +59,13 @@ export class UserServiceService {
     return this.http.post(hostAddress+'/users/getguardianDetails',data,{headers: headers}) //http://localhost:3000/
     .pipe(map(res => res.json()));
   }
+  changepassword(data){ 
+    let headers = new Headers();
+    headers.append('Cotent-type','application/json');
+    return this.http.post(hostAddress+'/users/changeUserpasswordAdmin',data,{headers: headers}) //http://localhost:3000/
+    .pipe(map(res => res.json()));
+  }
+
+  
 }
 

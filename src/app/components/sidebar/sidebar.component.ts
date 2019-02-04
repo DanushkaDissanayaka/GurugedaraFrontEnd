@@ -25,6 +25,9 @@ export const ROUTES: RouteInfo[] = [
     { path: '/EnrollStudent', title: 'Enroll Students',  icon:'how_to_reg', class: '' },
 
     { path: '/SendMessage', title: 'send Message' , icon:'message', class:''},
+    { path: '/ChangePassword',title:'change Password', icon:'security',class:''},
+    { path: '/evaluation', title: 'Evaluation Marks' , icon:'assignment', class:''},
+    { path: '/timetable', title: 'Timetable' , icon:'calendar_view_day', class:''},
 ];
 @Component({
   selector: 'app-sidebar',

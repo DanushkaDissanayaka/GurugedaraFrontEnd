@@ -39,6 +39,7 @@ import { ViewStudentDetailsComponent } from './view-student-details/view-student
 import { EnterPaymentsComponent } from './enter-payments/enter-payments.component';
 import { EnrollStudentComponent } from './enroll-student/enroll-student.component';
 import { SendMessageComponent } from './send-message/send-message.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 
 
@@ -67,6 +68,7 @@ import { SendMessageComponent } from './send-message/send-message.component';
     
     LoginComponent,
     RegisterComponent,
+    //ChangePasswordComponent,
     //SendMessageComponent,
   
   

@@ -1,3 +1,69 @@
-<p>
-  timetable works!
-</p>
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="card">
+          <div class="card-header card-header-info">
+              <h3 class="card-title">Timetable</h3>
+              <p class="card-category">Your inbox</p>
+          </div>
+          <div class="card-body">
+              <div class="btn-group" *ngIf="gurdianDetected">
+                  <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">{{dropDownStName}}</button>
+  
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" (click)="setStudentName(elem.UserID , elem.FirstName)" *ngFor="let elem of studentName">{{elem.FirstName}}</a>
+                  </div>
+                </div>
+            <!-- Card -->
+              <div class="row">
+                <!-- Row -->
+                  <div class="col-md-12">
+                    <!-- Column -->
+                      <!-- <h4 class="card-title">Content</h4> -->
+
+                      <div class="alert alert-info alert-with-icon" data-notify="container" *ngFor="let el of timetable">
+                          <i class="material-icons" data-notify="icon">calendar_today</i>
+                          <!-- <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <i class="material-icons">close</i>
+                          </button> -->
+                          <span data-notify="Subject">
+                              <h4>{{el.subjectID}}</h4>
+                          </span>
+                          <span data-notify="Location">
+                              {{el.locationID}}
+                          </span>
+                          <span data-notify="Day of week">
+                              <h4>{{el.dateOfWeek}}</h4>
+                          </span>
+                          <span data-notify="Start Time">
+                              {{el.startTime}}
+                          </span>
+                          <span data-notify="End Time">
+                              <h4>{{el.endTime}}</h4>
+                          </span>
+                          <span data-notify="Discription">
+                              {{el.description}}
+                          </span>
+                      </div>
+                  </div>
+
+                  <!-- <div class="col-md-6">
+                      <h4 class="card-title">Message</h4>
+                      <div class="alert alert-success alert-with-icon" *ngFor="let el of message">
+                          <i class="material-icons" data-notify="icon">message</i>
+                          <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <i class="material-icons">close</i>
+                          </button>
+                          <span data-notify="title">
+                              <h4>{{el.title}}</h4>
+                          </span>
+                          <span data-notify="message">
+                              {{el.message}}
+                          </span>
+                      </div>
+                  </div> -->
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

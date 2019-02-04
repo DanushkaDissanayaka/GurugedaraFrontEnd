@@ -139,4 +139,11 @@ export class ClassService {
       .pipe(map(res => res.json()));
   }
 
+  getStudentMarksDetails(data) {
+    let headers = new Headers();
+    headers.append('Cotent-type', 'application/json');
+    return this.http.post(hostAddress + '/fee/getFeeStudent', data, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
 }

@@ -19,6 +19,8 @@ import { EvaluationComponent } from '../../evaluation/evaluation.component';
 import { TimetableComponent } from '../../timetable/timetable.component';
 import { EnterPaymentsComponent } from '../../enter-payments/enter-payments.component';
 import { EnrollStudentComponent } from '../../enroll-student/enroll-student.component';
+import { SendMessageComponent } from '../../send-message/send-message.component';
+
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -42,5 +44,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'timetable',     component: TimetableComponent},
     { path: 'EnterPayments',     component: EnterPaymentsComponent },
     { path: 'EnrollStudent',     component: EnrollStudentComponent },
+    { path: 'SendMessage', component:SendMessageComponent},
+    
 
 ];

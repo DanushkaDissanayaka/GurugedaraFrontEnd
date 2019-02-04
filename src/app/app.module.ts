@@ -38,6 +38,7 @@ import {
 import { ViewStudentDetailsComponent } from './view-student-details/view-student-details.component';
 import { EnterPaymentsComponent } from './enter-payments/enter-payments.component';
 import { EnrollStudentComponent } from './enroll-student/enroll-student.component';
+import { SendMessageComponent } from './send-message/send-message.component';
 
 
 @NgModule({
@@ -65,6 +66,7 @@ import { EnrollStudentComponent } from './enroll-student/enroll-student.componen
     
     LoginComponent,
     RegisterComponent,
+    //SendMessageComponent,
   
   
   ],

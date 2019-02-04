@@ -1,9 +1,5 @@
-<div style="height:100px">
-
-</div>
-
-<form (submit) = "register()">  
-
+<div style="height:100px"></div>
+<form >  
 <div class = "container">
 <div class="main-content">
   <div class="container-fluid">
@@ -68,16 +64,36 @@
                 </div>
               </div>
               <div class="row">
+                  <div class="col-md-4">
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="E-mail ( If Any )" type="email" name = "email" [(ngModel)]="email">
+                      </mat-form-field>
+                    </div>
+                <div class="col-md-4">
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="User name" type="text" name = "username" [(ngModel)]="username">
+                  </mat-form-field>
+                </div>
+            
+                <div class="col-md-4">
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Student Id" type="text" name = "studentId" [(ngModel)]="studentId">
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
                 <div class="col-md-6">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Password" type="text" name = "Password" [(ngModel)]="Password">
+                    <input matInput placeholder="Password" type="password" name = "Password" [(ngModel)]="Password">
                   </mat-form-field>
                 </div>
                 <div class="col-md-6">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Confirm password" type="text" name = "ConfPassword" [(ngModel)]="ConfPassword">
+                    <input matInput placeholder="Confirm password" type="Password" name = "ConfPassword" [(ngModel)]="ConfPassword">
                   </mat-form-field>
                 </div>
+               
               </div>
               <!-- <div class="row">
                 <div class="col-md-12">
@@ -87,7 +103,7 @@
                   </mat-form-field>
                 </div>
               </div> -->
-              <button mat-raised-button type="submit" class="btn btn-primary pull-right">Submit</button>
+              <button mat-raised-button type="submit" class="btn btn-primary pull-right" (click) ="register()">Submit</button>
               <div class="clearfix"></div>
             </form>
           </div>

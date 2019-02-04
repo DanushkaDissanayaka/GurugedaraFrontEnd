@@ -15,6 +15,7 @@ export class EnrollStudentComponent implements OnInit {
   dropDownTitle = "Select ClassID"
   classList: any[]
   classId:any
+  classTitle:any
 
 
   constructor(private validateservice: ValidateService,
@@ -26,14 +27,28 @@ export class EnrollStudentComponent implements OnInit {
   }
 
 
-  getAllClassID() {
-    this.classservice.getClasses()
-      .subscribe(result => {
-        // console.log(result.data)
-        this.classList = result.data
-        // console.log(this.classList);
-      })
+
+  valuechange(newValue) {
+    this.userservice.findUser({ userId: newValue }).subscribe(data => {
+      if (data.data.length) {
+        if (data.data[0].role == 'student') {
+          this.notificationservice.alertInfo("User found " + data.data[0].FirstName + " " + data.data[0].LastName);
+          this.getstudentClass(newValue);
+        }
+      }
+    });
   }
+
+
+  getstudentClass(studentId: any) {
+    this.classservice.getStudentEnrolledClass({ userId: studentId }).subscribe(result => {
+      console.log(result);
+      this.classTitle = result.data;
+    });
+  }
+
+
+
 
   setClasstitle(value) {
     this.dropDownTitle = value.Title;

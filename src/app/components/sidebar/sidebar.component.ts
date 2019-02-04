@@ -24,6 +24,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/EnterPayments', title: 'Add Payments',  icon:'payment', class: '' },
     { path: '/EnrollStudent', title: 'Enroll for Subjects',  icon:'how_to_reg', class: '' },
 
+    { path: '/SendMessage', title: 'send Message' , icon:'message', class:''},
 ];
 @Component({
   selector: 'app-sidebar',

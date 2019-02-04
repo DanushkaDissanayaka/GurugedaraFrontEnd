@@ -20,9 +20,10 @@
                     aria-haspopup="true" aria-expanded="false">
                     {{ dropDownTitle}}
                   </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" *ngFor="let class of classList" (click)="setClasstitle(ele)">{{ele.Title}}</a>
-                  </div>
+              
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" (click)="setClasstitle(ele)" *ngFor="let ele of classTitle">{{ele.Title}}</a>
+                </div>
                 </div>
               </div>
               <button type="button" class="btn btn-warning" (click) = "onSubmit()">Enroll</button>

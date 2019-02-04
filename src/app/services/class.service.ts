@@ -112,6 +112,19 @@ export class ClassService {
       .pipe(map(res => res.json()));
   }
 
+
+
+//enroll student for subject
+  getClassDetails() {
+    let headers = new Headers();
+    headers.append('Cotent-type', 'application/json');
+    return this.http.get(hostAddress + '/class/getClassDetails', { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+
+
+
   addmarks(data) {
     let headers = new Headers();
     headers.append('Cotent-type', 'application/json');

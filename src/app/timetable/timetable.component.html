@@ -1,7 +1,7 @@
 <div class="main-content">
   <div class="container-fluid">
       <div class="card">
-          <div class="card-header card-header-info">
+          <div class="card-header card-header-warning">
               <h3 class="card-title">Timetable</h3>
               <p class="card-category">Your inbox</p>
           </div>
@@ -15,10 +15,10 @@
                   </div>
                 </div>
 
-                <div class="btn-group">
-                        <button class="btn btn-primary pull-right waves-effect" type="submit" (click)="getClassDetail()"> Submit
+                <!-- <div class="btn-group">
+                        <button class="btn btn-primary pull-right waves-effect" type="submit" (click)="getstudentClass()"> Submit
                         </button>
-                      </div>
+                      </div> -->
             <!-- Card -->
               <div class="row">
                 <!-- Row -->
@@ -26,7 +26,7 @@
                     <!-- Column -->
                       <!-- <h4 class="card-title">Content</h4> -->
 
-                      <div class="alert alert-info alert-with-icon" data-notify="container" *ngFor="let el of classDetails">
+                      <div class="alert alert-info alert-with-icon" data-notify="container" *ngFor="let el of classTitle">
                           <i class="material-icons" data-notify="icon">calendar_today</i>
                           <!-- <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
                               <i class="material-icons">close</i>

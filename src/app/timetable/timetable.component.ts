@@ -18,6 +18,7 @@ export class TimetableComponent implements OnInit {
   studentId: any
   classTitle: any
   classDetails: any
+  //ID : any = elem.userId
   
 
   constructor(
@@ -41,7 +42,7 @@ export class TimetableComponent implements OnInit {
     }
 
     else{
-      this.getClassDetail()
+      this.getstudentClass(this.userId);
     }
   }
 
@@ -64,7 +65,7 @@ export class TimetableComponent implements OnInit {
     this.classservice.getClassDetails().subscribe(result => {
       console.log(result);
       this.classDetails = result.data;
-      console.log(this.classTitle);
+      console.log(this.classDetails);
     });
   }
 

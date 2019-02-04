@@ -2,6 +2,7 @@ import { NoticeAndMessagesService } from './../services/notice-and-messages.serv
 import { Component, OnInit } from '@angular/core';
 import { ClassService } from 'app/services/class.service';
 import { NotificationsService } from '../services/notifications.service';
+import { ValidateService } from '../services/validate.service';
 
 
 
@@ -28,7 +29,8 @@ export class AddNotificationComponent implements OnInit {
   constructor(
     private Classes: ClassService,
     private noticem: NoticeAndMessagesService,
-    private notificationserivice: NotificationsService
+    private notificationserivice: NotificationsService,
+    private validateservice: ValidateService,
 
 
 
@@ -80,6 +82,26 @@ export class AddNotificationComponent implements OnInit {
     }
 
     console.log(data); 
+    if (!this.validateservice.validateUndefined(data.ClassID)) {
+      this.notificationserivice.alertWarning("Please enter valide class Id")
+      return false;
+    }
+    if (!this.validateservice.validateUndefined(data. title)) {
+      this.notificationserivice.alertWarning("Please enter  title")
+      return false;
+    }
+    if (!this.validateservice.validateUndefined(data.typeId)) {
+      this.notificationserivice.alertWarning("Please Enter notification  type")
+      return false;
+    }
+    if (!this.validateservice.validateUndefined(data.msg)) {
+      this.notificationserivice.alertWarning("Please enter your msg")
+      return false;
+    }
+    
+
+
+
     
     this.noticem.SendNotification(data).subscribe(data => {
       if (data.success) {

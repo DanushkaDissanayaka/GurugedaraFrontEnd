@@ -37,7 +37,7 @@ export class AddmarksComponent implements OnInit {
     this.getStudentsOfClass(name.ClassID);
     this.dropDownName = name.Title;
     this.classId = name.ClassID
- 
+
   }
 
   getAllClassID() {
@@ -64,6 +64,10 @@ export class AddmarksComponent implements OnInit {
     console.log(newValue.target.value);
     console.log(newValue.taeget);
 
+    this.date= "";
+    this.dropDownName = "Select class";
+    this.description ="";
+
   }
 
 
@@ -71,11 +75,11 @@ export class AddmarksComponent implements OnInit {
   
   collectmarks(a, id) {
 
-    if (!this.validateservice.validateUndefined(this.date)) {
-      this.notification.alertWarning("Date shuld not be empty");
-      a.target.value = "";
-      return false;
-    }
+    // if (!this.validateservice.validateUndefined(this.date)) {
+    //   this.notification.alertWarning("Date shuld not be empty");
+    //   a.target.value = "";
+    //   return false;
+    // }
 
     //if (!this.validateservice.validateUndefined(this.description)) {
     //  this.notification.alertWarning("Add discription first");

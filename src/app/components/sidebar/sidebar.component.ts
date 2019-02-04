@@ -22,7 +22,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/addNotification', title: 'Add New Notification',  icon:'add_alert', class: '' },
     { path: '/viewStudentDetails', title: 'View Student Details',  icon:'people', class: '' },
     { path: '/EnterPayments', title: 'Add Payments',  icon:'payment', class: '' },
-    { path: '/EnrollStudent', title: 'Enroll for Subjects',  icon:'how_to_reg', class: '' },
+    { path: '/EnrollStudent', title: 'Enroll Students',  icon:'how_to_reg', class: '' },
 
     { path: '/SendMessage', title: 'send Message' , icon:'message', class:''},
     { path: '/ChangePassword',title:'change Password', icon:'security',class:''},

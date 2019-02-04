@@ -52,6 +52,9 @@ export class AuthService {
       .pipe(map(res => res.json()));
   }
 
+
+
+  //enrollstudent
   enrollStudent(data){
     let headers = new Headers();
     headers.append('Cotent-type','application/json');

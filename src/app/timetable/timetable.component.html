@@ -6,7 +6,7 @@
               <p class="card-category">Your inbox</p>
           </div>
           <div class="card-body">
-              <div class="btn-group" *ngIf="gurdianDetected">
+              <div class="btn-group" *ngIf="gurdianDetectflag">
                   <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">{{dropDownStName}}</button>
   
@@ -14,6 +14,11 @@
                     <a class="dropdown-item" (click)="setStudentName(elem.UserID , elem.FirstName)" *ngFor="let elem of studentName">{{elem.FirstName}}</a>
                   </div>
                 </div>
+
+                <div class="btn-group">
+                        <button class="btn btn-primary pull-right waves-effect" type="submit" (click)="getClassDetail()"> Submit
+                        </button>
+                      </div>
             <!-- Card -->
               <div class="row">
                 <!-- Row -->
@@ -21,7 +26,7 @@
                     <!-- Column -->
                       <!-- <h4 class="card-title">Content</h4> -->
 
-                      <div class="alert alert-info alert-with-icon" data-notify="container" *ngFor="let el of timetable">
+                      <div class="alert alert-info alert-with-icon" data-notify="container" *ngFor="let el of classDetails">
                           <i class="material-icons" data-notify="icon">calendar_today</i>
                           <!-- <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
                               <i class="material-icons">close</i>

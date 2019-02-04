@@ -14,7 +14,7 @@ import { AuthService } from '../../services/auth.service';
 export class UnEnrollComponent implements OnInit {
 
 
-  dropDownTitle = "Select ClassID"
+  dropDownTitle = "Select Class"
   classList: any[]
   classId:any
   classTitle:any

@@ -22,7 +22,7 @@ import { EnrollStudentComponent } from '../../enroll-student/enroll-student.comp
 import { SendMessageComponent } from '../../send-message/send-message.component';
 import { UnEnrollComponent } from '../../enroll-student/un-enroll/un-enroll.component';
 import { ChangePasswordComponent } from '../../change-password/change-password.component';
-
+import { EditPaymentsComponent } from '../../enter-payments/edit-payments/edit-payments.component';
 
 
 export const AdminLayoutRoutes: Routes = [

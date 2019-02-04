@@ -84,12 +84,6 @@ export class ClassService {
   }
 
 
-  getStudentsForClass(ClassId) {
-    let headers = new Headers();
-    headers.append('Cotent-type', 'application/json');
-    return this.http.post(hostAddress + '/class/getAllstudentDetailsOfAclass', ClassId, { headers: headers })
-      .pipe(map(res => res.json()));
-  }
 
   getTeacherClasses(userId) {
     let headers = new Headers();
@@ -114,13 +108,30 @@ export class ClassService {
 
 
 
-//enroll student for subject
+//enroll student for subject     //view student details
   getClassDetails() {
     let headers = new Headers();
     headers.append('Cotent-type', 'application/json');
     return this.http.get(hostAddress + '/class/getClassDetails', { headers: headers })
       .pipe(map(res => res.json()));
   }
+////////View Student details//////
+
+getStudentsForClass(ClassId) {
+  let headers = new Headers();
+  headers.append('Cotent-type', 'application/json');
+  return this.http.post(hostAddress + '/class/getAllstudentDetailsOfAclass', ClassId, { headers: headers })
+    .pipe(map(res => res.json()));
+}
+
+
+////edit marks///
+getStudentsMarksDetails(data) {
+  let headers = new Headers();
+  headers.append('Cotent-type', 'application/json');
+  return this.http.post(hostAddress + '/marks/getmarksStudent', data, { headers: headers })
+    .pipe(map(res => res.json()));
+}
 
 
 

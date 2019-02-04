@@ -15,17 +15,28 @@ import { UserServiceService } from '../services/user-service.service';
 export class ViewStudentDetailsComponent implements OnInit {
 
 
-  StudentIdList: any[] = []
-  studentNameList: any[] = []
+  dropDownName = "Select Class"
+  classList: any[]
+  studentList: any[]
+  marks = []
+  classId: any
+  userData: any
 
+  // veriable for card
+  name: string =""
+  fullname: string=""
+  address: string=""
+  email: string =""
+  tel: string =""
+  dob: string =""
 
-  constructor( private validateservice: ValidateService,
+  constructor(private validateservice: ValidateService,
     private notificationservice: NotificationsService,
     private classservice: ClassService,
-    private userservice: UserServiceService ) { }
+    private userservice: UserServiceService) { }
 
   ngOnInit() {
-   
+    this.getAllClassID()
   }
 
   getStudentsOfClass(ClassID) {
@@ -33,14 +44,61 @@ export class ViewStudentDetailsComponent implements OnInit {
     this.classservice.getStudentsForClass({ ClassID: ClassID })
       .subscribe(result => {
         console.log(result)
-        this.StudentIdList = result.data
-        console.log(this.StudentIdList);
-        +0
+        this.studentList = result.data
+        console.log(this.studentList);
       })
   }
 
 
+  setDropDownName(name) {
 
+    this.getStudentsOfClass(name.ClassID);
+    this.dropDownName = name.Title;
+    this.classId = name.ClassID
+
+  }
+
+
+  getAllClassID() {
+    this.classservice.getClassDetails()///class Service
+      .subscribe(result => {
+
+        this.classList = result.data
+
+      })
+  }
+
+
+  valuechange(newValue) {
+    console.log(newValue.target.value);
+    console.log(newValue.target);
+
+  }
+
+  setuserId(Id:any){
+    console.log(this.studentList[Id]);
+    this.name= this.studentList[Id].LastName;
+    this.fullname= this.studentList[Id].FirstName + " " + this.studentList[Id].MiddleName + " " + this.studentList[Id].LastName
+    this.address= this.studentList[Id].AddNo + " " +this.studentList[Id].AddStreet +" "+ this.studentList[Id].AddCity;
+    this.email = this.studentList[Id].Email;
+    this.tel = this.studentList[Id].ContactNo;
   
+  }
+
+  onSubmit() {
+    if (confirm('Are you sure? you want to submit')) {
+      this.classservice.getStudentsForClass({ marks: this.marks }).subscribe(data => {
+        if (data.success) {
+          this.notificationservice.alertInfo(data.msg);
+        }
+        else {
+          this.notificationservice.alertDanger(data.msg);
+        }
+      })
+    } else {
+      // Do nothing!
+    }
+  }
 
 }
+

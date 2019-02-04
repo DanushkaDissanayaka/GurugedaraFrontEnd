@@ -19,6 +19,12 @@ getnoticetype(){
   .pipe(map(res => res.json()));
 }
 
+getnotice(data){
+  let headers = new Headers();
+  headers.append('Cotent-type','application/json');
+  return this.http.post(hostAddress +'/notification//getNotification',data,{headers: headers})
+  .pipe(map(res => res.json()));
+}
 
 SendNotification(data){
   let headers = new Headers();
@@ -26,13 +32,13 @@ SendNotification(data){
     return this.http.post( hostAddress +'/notification/addNotification',data,{headers: headers}) //http://localhost:3000/
       .pipe(map(res => res.json()));
 }
-////////here send massege havent rout in backend/////////
+
 ///////dont delete it/////////
 
 SendMessage(data){
   let headers = new Headers();
     headers.append('Cotent-type','application/json');
-    return this.http.post( hostAddress +'/notification/addNotification',data,{headers: headers}) //http://localhost:3000/
+    return this.http.post( hostAddress +'/msg/message',data,{headers: headers}) //http://localhost:3000/
       .pipe(map(res => res.json()));
 }
 

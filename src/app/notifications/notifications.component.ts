@@ -24,5 +24,4 @@ export class NotificationsComponent implements OnInit {
       {title:"Title",message:"this is the message fot this notification"},
     ]
   }
-
 }

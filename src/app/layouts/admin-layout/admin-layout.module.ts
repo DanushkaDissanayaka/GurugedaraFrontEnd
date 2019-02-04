@@ -35,6 +35,7 @@ import { EnterPaymentsComponent } from '../../enter-payments/enter-payments.comp
 import { EnrollStudentComponent } from '../../enroll-student/enroll-student.component';
 import { SendMessageComponent } from '../../send-message/send-message.component';
 import { ChangePasswordComponent } from '../../change-password/change-password.component';
+import { CardComponent } from '../../card/card.component';
 
 
 
@@ -90,7 +91,7 @@ import {
     EnrollStudentComponent,
     SendMessageComponent,
     ChangePasswordComponent,
-    
+    CardComponent,
   ]
 })
 

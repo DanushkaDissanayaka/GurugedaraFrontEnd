@@ -28,6 +28,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/ChangePassword',title:'change Password', icon:'security',class:''},
     { path: '/evaluation', title: 'Evaluation Marks' , icon:'assignment', class:''},
     { path: '/timetable', title: 'Timetable' , icon:'calendar_view_day', class:''},
+    { path: '/card', title: 'Card' , icon:'calendar_view_day', class:''},
 ];
 @Component({
   selector: 'app-sidebar',

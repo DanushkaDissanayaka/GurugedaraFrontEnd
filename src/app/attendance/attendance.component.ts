@@ -35,7 +35,7 @@ export class AttendanceComponent implements OnInit {
     { id:2017, value:"2017"},
     { id:2018, value:"2018"},
     { id:2019, value:"2019"},
-  ]
+  ];
 
   month = [
     { id: 0, name: "January" },

@@ -2,7 +2,10 @@
     <div class="row">
         <div class="col-md-5">
             <mat-form-field class="example-full-width">
-                <input matInput placeholder="First Name" name="FirstName" [(ngModel)]="FirstName" type="text" required>
+                <input matInput placeholder="First Name" name="FirstName"  [(ngModel)]="FirstName" type="text" required>
+                <!-- <div *ngIf="FirstName.invalid && (FirstName.dirty || FirstName.touched)"></div>
+    <div class="alert alert-danger"> -->
+
             </mat-form-field>
         </div>
         <div class="col-md-3">
@@ -29,7 +32,7 @@
         </div>
         <div class="col-md-4">
             <mat-form-field class="example-full-width">
-                <input matInput placeholder="Constact No" name="ContactNo" [(ngModel)]="ContactNo" type="email" required>
+                <input matInput placeholder="Constact No" name="ContactNo" [(ngModel)]="ContactNo" type="number" required>
             </mat-form-field>
         </div>
     </div>

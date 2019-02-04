@@ -47,6 +47,12 @@ export class PaymentsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
+    this.role = localStorage.getItem('role');
+    console.log(this.role);
+    this.guardianid = localStorage.getItem('userId');
+    this.userid = localStorage.getItem('userId');
+
     if (this.role == "guardian") {
       this.userservice.getStudentIdFromGuardianId({ username: this.guardianid }).subscribe(result => {
         console.log(result);

@@ -37,6 +37,7 @@ import {
 } from '@angular/material';
 import { ViewStudentDetailsComponent } from './view-student-details/view-student-details.component';
 import { EnterPaymentsComponent } from './enter-payments/enter-payments.component';
+import { EnrollStudentComponent } from './enroll-student/enroll-student.component';
 import { SendMessageComponent } from './send-message/send-message.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 
@@ -68,6 +69,7 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
     RegisterComponent,
     //ChangePasswordComponent,
     //SendMessageComponent,
+  
   
   ],
   providers: [AuthGuard],

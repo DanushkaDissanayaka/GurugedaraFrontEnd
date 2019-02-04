@@ -9,53 +9,69 @@
                     </div>
                     <div class="card-body">
 
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        {{dropDownName}}
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" *ngFor="let class of classList" (click)="setDropDownName(class)">{{class.Title}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                        
+                        <div class="table-responsive">
+                            <table class="table table-hover">
 
+                                <thead>
+                                    <tr *ngFor="let student of studentList">
+                                        <td>
+                                            {{student.UserID}}
+                                        </td>
+                                        <td>
+                                            {{student.FirstName}} {{student.MiddleName}} {{student.LastName}}
+                                        </td>
+                                    </tr>
+                                </thead>
+                            </table>
 
-                        <tr *ngFor="let student of studentList">
-                            <td>
-                                {{student.UserID}}
-                            </td>
-                            <td>
-                                {{student.FirstName}} {{student.MiddleName}} {{student.LastName}}
-                            </td>
-                        </tr>
-
-
-
-
+                        </div>
                     </div>
                 </div>
-            </div>
+                </div>
 
-            <!-- Profile card begin here-->
-            <div class="col-md-4">
-                <div class="card card-profile">
-                    <div class="card-avatar">
-                        <a href="#pablo">
-                            <img class="img" src="./assets/img/faces/marc.jpg" />
-                        </a>
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">{{userData.FirstName}}</h4>
-                        <h6 class="card-category text-gray">{{userData.role}}</h6>
-                        <p class="card-description">
-                            Name : {{userData.FirstName +" "+ userData.MiddleName+" "+ userData.LastName}}
-                        </p>
-                        <p class="card-description">
-                            Address : {{userData.AddNo + " " + userData.AddStreet+ " " + userData.AddCity}}
-                        </p>
-                        <p class="card-description">
-                            Email : {{userData.Email}}
-                        </p>
-                        <p class="card-description">
-                            Contact No : {{userData.ContactNo}}
-                        </p>
-                        <a href="#pablo" class="btn btn-danger btn-round">Follow</a>
+
+                <!-- Profile card begin here-->
+                <div class="col-md-4">
+                    <div class="card card-profile">
+                        <div class="card-avatar">
+                            <a href="#pablo">
+                                <img class="img" src="./assets/img/faces/marc.jpg" />
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">{{userData.FirstName}}</h4>
+                            <h6 class="card-category text-gray">{{userData.role}}</h6>
+                            <p class="card-description">
+                                Name : {{userData.FirstName +" "+ userData.MiddleName+" "+ userData.LastName}}
+                            </p>
+                            <p class="card-description">
+                                Address : {{userData.AddNo + " " + userData.AddStreet+ " " + userData.AddCity}}
+                            </p>
+                            <p class="card-description">
+                                Email : {{userData.Email}}
+                            </p>
+                            <p class="card-description">
+                                Contact No : {{userData.ContactNo}}
+                            </p>
+                            <a href="#pablo" class="btn btn-danger btn-round">Follow</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+    

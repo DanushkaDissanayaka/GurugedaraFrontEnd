@@ -15,8 +15,11 @@ import { UserServiceService } from '../services/user-service.service';
 export class ViewStudentDetailsComponent implements OnInit {
 
 
-  StudentIdList: any[] = []
-  studentNameList: any[] = []
+  dropDownName = "Select Class"
+  classList: any[] 
+  studentList: any[]
+  marks = []
+  classId:any
 
 
   constructor( private validateservice: ValidateService,
@@ -25,7 +28,7 @@ export class ViewStudentDetailsComponent implements OnInit {
     private userservice: UserServiceService ) { }
 
   ngOnInit() {
-   
+    this.getAllClassID()
   }
 
   getStudentsOfClass(ClassID) {
@@ -33,14 +36,52 @@ export class ViewStudentDetailsComponent implements OnInit {
     this.classservice.getStudentsForClass({ ClassID: ClassID })
       .subscribe(result => {
         console.log(result)
-        this.StudentIdList = result.data
-        console.log(this.StudentIdList);
+        this.studentList = result.data
+        console.log(this.studentList);
         +0
       })
   }
 
 
+  setDropDownName(name) {
+   
+    this.getStudentsOfClass(name.ClassID);
+    this.dropDownName = name.Title;
+    this.classId = name.ClassID
+    
+  }
 
-  
+
+  getAllClassID() {
+    this.classservice.getClassDetails()///class Service
+      .subscribe(result => {
+       
+        this.classList = result.data
+      
+      })
+  }
+
+
+  valuechange(newValue) {
+    console.log(newValue.target.value);
+    console.log(newValue.taeget);
+
+  }
+
+  onSubmit() {
+    if (confirm('Are you sure? you want to submit')) {
+      this.classservice.getStudentsForClass({marks:this.marks}).subscribe(data => {
+        if (data.success) {
+          this.notificationservice.alertInfo(data.msg);
+        }
+        else {
+          this.notificationservice.alertDanger(data.msg);
+        }
+      })
+    } else {
+      // Do nothing!
+    }
+  }
 
 }
+

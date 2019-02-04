@@ -31,19 +31,19 @@ export class AddmarksComponent implements OnInit {
   }
 
   setDropDownName(name) {
-    // console.log(name.ClassID)
+    
     this.getStudentsOfClass(name.ClassID);
     this.dropDownName = name.Title;
     this.classId = name.ClassID
-    // console.log(this.dropDownName);
+ 
   }
 
   getAllClassID() {
-    this.Classes.getClasses()
+    this.Classes.getClasses() ///class Service
       .subscribe(result => {
-        // console.log(result.data)
+       
         this.classList = result.data
-        // console.log(this.classList);
+      
       })
   }
 
@@ -64,9 +64,7 @@ export class AddmarksComponent implements OnInit {
 
   }
 
-  addMarks(){
 
-  }
 
   
   collectmarks(a, id) {

@@ -14,14 +14,20 @@ import { AuthService } from '../../services/auth.service';
 })
 export class ViewmarksComponent implements OnInit {
   
-  dropDownName="Select classId"
-  dropDownTitle ="Select Assignment Date"
-
+  dropDownName = "Select Class"
   classList: any[]
+  studentList: any[]
+  marks = []
   classId: any
-  classTitle: any
-  StudentID: any
-  OfficeuserId: any
+ // marks: any
+
+//variable for card
+  // name: string =""
+  // fullname: string=""
+  // address: string=""
+  // email: string =""
+  // tel: string =""
+  // dob: string =""
 
 
   constructor( private validateservice: ValidateService,
@@ -33,33 +39,69 @@ export class ViewmarksComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+    this.getAllClassID()
   }
+
+  getStudentsOfClass(ClassID) {
+    console.log(ClassID)
+    this.classservice.getStudentsForClass({ ClassID: ClassID })
+      .subscribe(result => {
+        console.log(result)
+        this.studentList = result.data
+        console.log(this.studentList);
+      })
+  }
+
+  // getStudentsMarksDetails(ClassID) {
+  //   console.log(ClassID)
+  //   this.classservice.getStudentsForClass({  marks:  mark })
+  //     .subscribe(result => {
+  //       console.log(result)
+  //       this.studentList = result.data
+  //       console.log(this.studentList);
+  //     })
+  // }
+
+
+
+  setDropDownName(name) {
+
+    this.getStudentsOfClass(name.ClassID);
+    this.dropDownName = name.Title;
+    this.classId = name.ClassID
+
+  }
+ 
+  getAllClassID() {
+    this.classservice.getClassDetails()///class Service
+      .subscribe(result => {
+
+        this.classList = result.data
+
+      })
+  }
+
 
   valuechange(newValue) {
-    this.classTitle = [];
-    this.dropDownName = "Select class";
-    this.userservice.findUser({ userId: newValue }).subscribe(data => {
-      if (data.data.length) {
-        if (data.data[0].role == 'student') {
-          this.notificationservice.alertInfo("User found " + data.data[0].FirstName + " " + data.data[0].LastName);
-          this.getstudentClass();
+    console.log(newValue.target.value);
+    console.log(newValue.target);
+
+  }
+
+
+  onSubmit() {
+    if (confirm('Are you sure? you want to submit')) {
+      this.classservice.getStudentsForClass({ marks: this.marks }).subscribe(data => {
+        if (data.success) {
+          this.notificationservice.alertInfo(data.msg);
         }
-      }
-    });
+        else {
+          this.notificationservice.alertDanger(data.msg);
+        }
+      })
+    } else {
+      // Do nothing!
+    }
   }
-  getstudentClass() {
-    this.classservice.getClassDetails().subscribe(result => {
-      console.log(result);
-      this.classTitle = result.data;
-    });
-  }
-
- 
-  setClasstitle(value) {
-    this.dropDownName = value.Title;
-    this.classId = value.ClassID;
-  }
-
 
 }

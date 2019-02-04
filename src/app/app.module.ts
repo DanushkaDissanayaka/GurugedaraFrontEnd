@@ -69,7 +69,7 @@ import { EditPaymentsComponent } from './enter-payments/edit-payments/edit-payme
     
     LoginComponent,
     RegisterComponent,
-    EditPaymentsComponent,
+   
     //ChangePasswordComponent,
     //SendMessageComponent,
   

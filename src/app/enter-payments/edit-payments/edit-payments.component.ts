@@ -3,44 +3,30 @@ import { ClassService } from 'app/services/class.service';
 import { NotificationsService } from '../../services/notifications.service'
 import { ValidateService } from '../../services/validate.service'
 import { UserServiceService } from '../../services/user-service.service';
-import { AuthService } from '../../services/auth.service';
 
 
 @Component({
-  selector: 'app-viewmarks',
-  templateUrl: './viewmarks.component.html',
-  styleUrls: ['./viewmarks.component.scss'],
-  providers: [ClassService]
+  selector: 'app-edit-payments',
+  templateUrl: './edit-payments.component.html',
+  styleUrls: ['./edit-payments.component.scss']
 })
-export class ViewmarksComponent implements OnInit {
-  
+export class EditPaymentsComponent implements OnInit {
+
   dropDownName = "Select Class"
   classList: any[]
   studentList: any[]
   marks = []
   classId: any
- // marks: any
+  userData: any
 
-//variable for card
-  // name: string =""
-  // fullname: string=""
-  // address: string=""
-  // email: string =""
-  // tel: string =""
-  // dob: string =""
-
-
-  constructor( private validateservice: ValidateService,
+  constructor(private validateservice: ValidateService,
     private notificationservice: NotificationsService,
     private classservice: ClassService,
-    private userservice: UserServiceService,
-    private authservice: AuthService) { 
-   
-  }
+    private userservice: UserServiceService) { }
 
   ngOnInit() {
-    this.getAllClassID()
   }
+
 
   getStudentsOfClass(ClassID) {
     console.log(ClassID)
@@ -52,17 +38,6 @@ export class ViewmarksComponent implements OnInit {
       })
   }
 
-  // getStudentsMarksDetails(ClassID) {
-  //   console.log(ClassID)
-  //   this.classservice.getStudentsForClass({  marks:  mark })
-  //     .subscribe(result => {
-  //       console.log(result)
-  //       this.studentList = result.data
-  //       console.log(this.studentList);
-  //     })
-  // }
-
-
 
   setDropDownName(name) {
 
@@ -71,7 +46,7 @@ export class ViewmarksComponent implements OnInit {
     this.classId = name.ClassID
 
   }
- 
+
   getAllClassID() {
     this.classservice.getClassDetails()///class Service
       .subscribe(result => {
@@ -81,12 +56,12 @@ export class ViewmarksComponent implements OnInit {
       })
   }
 
-
   valuechange(newValue) {
     console.log(newValue.target.value);
     console.log(newValue.target);
 
   }
+
 
 
   onSubmit() {

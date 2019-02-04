@@ -54,13 +54,25 @@ export class AuthService {
 
 
 
-  //enrollstudent
+  //enrollstudent/////////
   enrollStudent(data){
     let headers = new Headers();
     headers.append('Cotent-type','application/json');
     return this.http.post(hostAddress+'/class/enrol',data,{headers: headers}) //http://localhost:3000/
     .pipe(map(res => res.json()));
   }
+
+  ////UnENroll/////////////
+  UnenrollStudent(data){
+    let headers = new Headers();
+    headers.append('Cotent-type','application/json');
+    return this.http.post(hostAddress+'/class/unenrol',data,{headers: headers}) //http://localhost:3000/
+    .pipe(map(res => res.json()));
+  }
+
+
+
+
 
   getProfile(){
     let headers = new Headers();

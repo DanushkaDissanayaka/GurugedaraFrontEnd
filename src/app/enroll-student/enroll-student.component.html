@@ -11,7 +11,8 @@
             <div class="row">
               <div class="col-md-4">
                 <mat-form-field class="example-full-width">
-                  <input matInput placeholder="Student's Index" name="studentID" [(ngModel)]="studentID"(ngModelChange)="valuechange($event)">
+                  <input matInput placeholder="Student's Index" name="StudentID" [(ngModel)]="StudentID"
+                    (ngModelChange)="valuechange($event)">
                 </mat-form-field>
               </div>
               <div class="col-md-4">
@@ -20,13 +21,13 @@
                     aria-haspopup="true" aria-expanded="false">
                     {{ dropDownTitle}}
                   </button>
-              
+
                   <div class="dropdown-menu">
                     <a class="dropdown-item" (click)="setClasstitle(ele)" *ngFor="let ele of classTitle">{{ele.Title}}</a>
-                </div>
+                  </div>
                 </div>
               </div>
-              <button type="button" class="btn btn-warning" (click) = "onSubmit()">Enroll</button>
+              <button type="button" class="btn btn-warning" (click)="onSubmit()">Enroll</button>
             </div>
           </div>
         </div>
@@ -35,46 +36,28 @@
   </div>
 
 
-<br>
-<br>
-  
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card">
-          <div class="card-header card-header-danger">
-            <h4 class="card-title ">UnEnroll for Classes</h4>
-            <p class="card-category"> </p>
-          </div>
-          <div class="card-body">
+  <br>
+  <br>
+  <!--///////////////////////////////////UNENROl///////////////////////////////////////////////////////////////////////////-->
+  <!--///////////////////////////////////UNENROl///////////////////////////////////////////////////////////////////////////-->
+  <div class="main-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-danger">
+              <h4 class="card-title ">UnEnroll for Classes</h4>
+              <p class="card-category"> </p>
+            </div>
+            <div class="card-body">
 
               <div class="card-body">
-                  <div class="row">
-                    <div class="col-md-4">
-                      <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Student's Index" name="studentID" [(ngModel)]="StudentID"(ngModelChange)="valuechange($event)">
-                      </mat-form-field>
-                    </div>
-
-
-                    <div class="col-md-4">
-                        <div class="dropdown">
-                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            {{ dropDownTitle}}
-                          </button>
-                      
-                          <div class="dropdown-menu">
-                            <a class="dropdown-item" (click)="setClasstitle(ele)" *ngFor="let ele of classTitle">{{ele.Title}}</a>
-                        </div>
-                        </div>
-                      </div>
-
-
+                <app-un-enroll></app-un-enroll>
+              </div>
             </div>
-            </div>
-            </div>
-            </div>
-            </div>
-            </div>
-            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

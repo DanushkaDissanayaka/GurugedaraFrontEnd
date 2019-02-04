@@ -3,7 +3,7 @@ import { ClassService } from 'app/services/class.service';
 import { NotificationsService } from '../services/notifications.service'
 import { ValidateService } from '../services/validate.service'
 import { UserServiceService } from '../services/user-service.service';
-import {  } from '../services/user-service.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-enroll-student',
@@ -13,36 +13,33 @@ import {  } from '../services/user-service.service';
 })
 export class EnrollStudentComponent implements OnInit {
 
-  dropDownTitle = "Select ClassID"
+  dropDownTitle = "Select class"
   classList: any[]
-  classId:any
-  classTitle:any
-  feedate:any
-  amount:any
-  studentID:any
-  OfficeuserId:any
+  classId: any
+  classTitle: any
+  StudentID: any
+  OfficeuserId: any
 
 
   constructor(private validateservice: ValidateService,
     private notificationservice: NotificationsService,
     private classservice: ClassService,
-    private userservice: UserServiceService) { }
+    private userservice: UserServiceService,
+    private authservice: AuthService) { }
 
   ngOnInit() {
-    this.getstudentClass()
+    //this.getstudentClass()
   }
 
 
   valuechange(newValue) {
+    this.classTitle = [];
+    this.dropDownTitle = "Select class";
     this.userservice.findUser({ userId: newValue }).subscribe(data => {
       if (data.data.length) {
         if (data.data[0].role == 'student') {
           this.notificationservice.alertInfo("User found " + data.data[0].FirstName + " " + data.data[0].LastName);
-         // this.getstudentClass(newValue);
-
-        
-
-
+          this.getstudentClass();
         }
       }
     });
@@ -62,31 +59,23 @@ export class EnrollStudentComponent implements OnInit {
   setClasstitle(value) {
     this.dropDownTitle = value.Title;
     this.classId = value.ClassID;
-    
-
-
   }
 
   onSubmit() {
     const data = {
-      StudentId: this.studentID,
-      OfficeuserId: this.OfficeuserId,
-      ClassId: this.classId,
-      atDate: this.feedate,
-      amount: this.amount
+      userId: this.StudentID,
+      classId: this.classId,
     }
     console.log(data);
 
 
     if (confirm('Are you sure? you want to submit')) {
-      this.classservice.enrollStudent(data).subscribe(data => {  //auth service.ts
+      this.authservice.enrollStudent(data).subscribe(data => {  //auth service.ts
         if (data.success) {
           this.notificationservice.alertInfo(data.msg);
-          this.studentID=""
-          this.classId=""
-          this.feedate=""
-          this.amount=""
-
+          this.StudentID = ""
+          this.classId = ""
+          this.dropDownTitle = "Select class"
         }
         else {
           this.notificationservice.alertDanger(data.msg);
@@ -99,6 +88,5 @@ export class EnrollStudentComponent implements OnInit {
 
 
 
- 
 
 }

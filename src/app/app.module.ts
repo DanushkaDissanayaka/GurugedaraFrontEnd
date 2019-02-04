@@ -41,6 +41,7 @@ import { EnrollStudentComponent } from './enroll-student/enroll-student.componen
 import { SendMessageComponent } from './send-message/send-message.component';
 
 
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,

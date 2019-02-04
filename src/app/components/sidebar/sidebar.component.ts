@@ -23,6 +23,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/viewStudentDetails', title: 'View Student Details',  icon:'people', class: '' },
     { path: '/EnterPayments', title: 'Add Payments',  icon:'payment', class: '' },
     { path: '/SendMessage', title: 'send Message' , icon:'message', class:''},
+    { path: '/ChangePassword',title:'change Password', icon:'security',class:''}
 ];
 @Component({
   selector: 'app-sidebar',

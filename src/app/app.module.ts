@@ -38,6 +38,7 @@ import {
 import { ViewStudentDetailsComponent } from './view-student-details/view-student-details.component';
 import { EnterPaymentsComponent } from './enter-payments/enter-payments.component';
 import { SendMessageComponent } from './send-message/send-message.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 
 @NgModule({
@@ -65,6 +66,7 @@ import { SendMessageComponent } from './send-message/send-message.component';
     
     LoginComponent,
     RegisterComponent,
+    //ChangePasswordComponent,
     //SendMessageComponent,
   
   ],

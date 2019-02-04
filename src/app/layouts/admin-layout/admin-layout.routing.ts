@@ -19,6 +19,7 @@ import { EvaluationComponent } from '../../evaluation/evaluation.component';
 import { TimetableComponent } from '../../timetable/timetable.component';
 import { EnterPaymentsComponent } from '../../enter-payments/enter-payments.component';
 import { SendMessageComponent } from '../../send-message/send-message.component';
+import { ChangePasswordComponent } from '../../change-password/change-password.component';
 
 
 
@@ -43,6 +44,8 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'timetable',     component: TimetableComponent},
     { path: 'EnterPayments',     component: EnterPaymentsComponent },
     { path: 'SendMessage', component:SendMessageComponent},
+    { path: 'ChangePassword', component:ChangePasswordComponent}
     
+
 
 ];

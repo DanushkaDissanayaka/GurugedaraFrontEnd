@@ -33,6 +33,7 @@ import { EvaluationComponent } from '../../evaluation/evaluation.component';
 import { TimetableComponent } from '../../timetable/timetable.component';
 import { EnterPaymentsComponent } from '../../enter-payments/enter-payments.component';
 import { SendMessageComponent } from '../../send-message/send-message.component';
+import { ChangePasswordComponent } from '../../change-password/change-password.component';
 
 
 
@@ -86,6 +87,7 @@ import {
     TimetableComponent,
     EnterPaymentsComponent,
     SendMessageComponent,
+    ChangePasswordComponent,
     
   ]
 })

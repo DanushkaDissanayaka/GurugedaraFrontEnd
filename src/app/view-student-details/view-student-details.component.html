@@ -25,53 +25,53 @@
 
                         <div class="table-responsive">
                             <table class="table table-hover">
-
                                 <thead>
-                                    <tr *ngFor="let student of studentList">
-                                        <td>
-                                            {{student.UserID}}
-                                        </td>
-                                        <td>
-                                            {{student.FirstName}} {{student.MiddleName}} {{student.LastName}}
-                                        </td>
+                                    <tr *ngFor="let student of studentList; let i = index">
+                                        <a (click)="setuserId(i)">
+                                            <td>
+                                                {{student.UserID}}
+                                            </td>
+                                            <td>
+                                                {{student.FirstName}} {{student.MiddleName}} {{student.LastName}}
+                                            </td>
+                                        </a>
                                     </tr>
                                 </thead>
                             </table>
-
                         </div>
                     </div>
                 </div>
-                </div>
+            </div>
 
 
-                <!-- Profile card begin here-->
-                <div class="col-md-4">
-                    <div class="card card-profile">
-                        <div class="card-avatar">
-                            <a href="#pablo">
-                                <img class="img" src="./assets/img/faces/marc.jpg" />
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">{{userData.FirstName}}</h4>
-                            <h6 class="card-category text-gray">{{userData.role}}</h6>
-                            <p class="card-description">
-                                Name : {{userData.FirstName +" "+ userData.MiddleName+" "+ userData.LastName}}
-                            </p>
-                            <p class="card-description">
-                                Address : {{userData.AddNo + " " + userData.AddStreet+ " " + userData.AddCity}}
-                            </p>
-                            <p class="card-description">
-                                Email : {{userData.Email}}
-                            </p>
-                            <p class="card-description">
-                                Contact No : {{userData.ContactNo}}
-                            </p>
-                            <a href="#pablo" class="btn btn-danger btn-round">Follow</a>
-                        </div>
+            <!-- Profile card begin here-->
+            <div class="col-md-4">
+                <div class="card card-profile">
+                    <div class="card-avatar">
+                        <a href="#pablo">
+                            <img class="img" src="./assets/img/faces/marc.jpg" />
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">{{name}}</h4>
+                        <h6 class="card-category text-gray">{{role}}</h6>
+                        <p class="card-description">
+                            Name : {{fullname}}
+                        </p>
+                        <p class="card-description">
+                            Address : {{address}}
+                        </p>
+                        <p class="card-description">
+                            Email : {{email}}
+                        </p>
+                        <p class="card-description">
+                            Contact No : {{tel}}
+                        </p>
+                       
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+</div>

@@ -16,16 +16,24 @@ export class ViewStudentDetailsComponent implements OnInit {
 
 
   dropDownName = "Select Class"
-  classList: any[] 
+  classList: any[]
   studentList: any[]
   marks = []
-  classId:any
+  classId: any
+  userData: any
 
+  // veriable for card
+  name: string =""
+  fullname: string=""
+  address: string=""
+  email: string =""
+  tel: string =""
+  dob: string =""
 
-  constructor( private validateservice: ValidateService,
+  constructor(private validateservice: ValidateService,
     private notificationservice: NotificationsService,
     private classservice: ClassService,
-    private userservice: UserServiceService ) { }
+    private userservice: UserServiceService) { }
 
   ngOnInit() {
     this.getAllClassID()
@@ -38,39 +46,48 @@ export class ViewStudentDetailsComponent implements OnInit {
         console.log(result)
         this.studentList = result.data
         console.log(this.studentList);
-        +0
       })
   }
 
 
   setDropDownName(name) {
-   
+
     this.getStudentsOfClass(name.ClassID);
     this.dropDownName = name.Title;
     this.classId = name.ClassID
-    
+
   }
 
 
   getAllClassID() {
     this.classservice.getClassDetails()///class Service
       .subscribe(result => {
-       
+
         this.classList = result.data
-      
+
       })
   }
 
 
   valuechange(newValue) {
     console.log(newValue.target.value);
-    console.log(newValue.taeget);
+    console.log(newValue.target);
 
+  }
+
+  setuserId(Id:any){
+    console.log(this.studentList[Id]);
+    this.name= this.studentList[Id].LastName;
+    this.fullname= this.studentList[Id].FirstName + " " + this.studentList[Id].MiddleName + " " + this.studentList[Id].LastName
+    this.address= this.studentList[Id].AddNo + " " +this.studentList[Id].AddStreet +" "+ this.studentList[Id].AddCity;
+    this.email = this.studentList[Id].Email;
+    this.tel = this.studentList[Id].ContactNo;
+  
   }
 
   onSubmit() {
     if (confirm('Are you sure? you want to submit')) {
-      this.classservice.getStudentsForClass({marks:this.marks}).subscribe(data => {
+      this.classservice.getStudentsForClass({ marks: this.marks }).subscribe(data => {
         if (data.success) {
           this.notificationservice.alertInfo(data.msg);
         }

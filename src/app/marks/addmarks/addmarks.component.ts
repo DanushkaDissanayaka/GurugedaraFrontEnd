@@ -3,6 +3,7 @@ import { ClassService } from 'app/services/class.service';
 import { NotificationsService } from '../../services/notifications.service'
 import { ValidateService } from '../../services/validate.service'
 
+
 @Component({
   selector: 'app-addmarks',
   templateUrl: './addmarks.component.html',
@@ -24,6 +25,7 @@ export class AddmarksComponent implements OnInit {
     private Classes: ClassService,
     private notification: NotificationsService,
     private validateservice: ValidateService,
+    
   ) { }
 
   ngOnInit() {
@@ -75,11 +77,11 @@ export class AddmarksComponent implements OnInit {
       return false;
     }
 
-    if (!this.validateservice.validateUndefined(this.description)) {
-      this.notification.alertWarning("Add discription first");
-      a.target.value = "";
-      return false;
-    }
+    //if (!this.validateservice.validateUndefined(this.description)) {
+    //  this.notification.alertWarning("Add discription first");
+     // a.target.value = "";
+     // return false;
+    //}
 
     if (!this.validateservice.validateUndefined(this.classId)) {
       this.notification.alertWarning("Select Class First")
@@ -121,6 +123,34 @@ export class AddmarksComponent implements OnInit {
   }
 
   onSubmit() {
+    const data = {
+     // userId: this.StudentID,
+      classId: this.classId,
+      date:this.date,
+      description:this.description
+    
+
+
+    }
+
+    if(!this.validateservice.validateUndefined(this.classId)){
+      this.notification.alertWarning("Select Class First");
+      return false;
+    }
+
+    if(!this.validateservice.validateUndefined(this.date)){
+      this.notification.alertWarning("Date should not be empty");
+      return false;
+    }
+
+    if(!this.validateservice.validateUndefined(this.description)){
+      this.notification.alertWarning("Add Description First");
+      return false;
+    }
+
+
+
+
     if (confirm('Are you sure? you want to submit')) {
       this.Classes.addmarks({marks:this.marks}).subscribe(data => {
         if (data.success) {

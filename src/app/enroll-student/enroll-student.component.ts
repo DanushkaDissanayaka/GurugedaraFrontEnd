@@ -65,7 +65,22 @@ export class EnrollStudentComponent implements OnInit {
     const data = {
       userId: this.StudentID,
       classId: this.classId,
+
+    
+
+
     }
+
+    if(!this.validateservice.validateUndefined(this.StudentID)){
+      this.notificationservice.alertWarning("Enter Student index number");
+      return false;
+    }
+
+    if(!this.validateservice.validateUndefined(this.classId)){
+      this.notificationservice.alertWarning("Select Class to unenroll");
+      return false;
+    }
+
     console.log(data);
 
 

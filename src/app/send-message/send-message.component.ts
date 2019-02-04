@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NoticeAndMessagesService } from './../services/notice-and-messages.service';
 import { NotificationsService } from '../services/notifications.service';
 
+
 @Component({
   selector: 'app-send-message',
   templateUrl: './send-message.component.html',

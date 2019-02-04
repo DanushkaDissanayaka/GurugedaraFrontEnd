@@ -10,12 +10,17 @@ import { UserServiceService } from '../Services/user-service.service';
 })
 export class ChangePasswordComponent implements OnInit {
 
+  SelectRole = "Select Reciver Role";
   userId: string;
   password: string;
   Conformpassword: string;
   role: string;
   userDetectFlag: boolean = false;
-
+  Role = [
+    { name: "other" },
+    { name: "guardian" },
+    
+  ];
 
   
 
@@ -27,8 +32,13 @@ export class ChangePasswordComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // this.StudentId = localStorage.getItem("userId")
   }
+    // this.StudentId = localStorage.getItem("userId")
+    setDropDwonRole(value: string) {
+      this.SelectRole = value;
+    }
+
+  
 
   change() {
 
@@ -37,20 +47,22 @@ export class ChangePasswordComponent implements OnInit {
       const user = {
         userId: this. userId,
         password: this.password,
-        role:this.role
+        role:this.SelectRole
       }
       console.log(user);
       
       this.userServiceservice.changepassword(user).subscribe(data => {
         if (data.success) {
           //console.log("your now registerd");
-          console.log(data.msg);
+         // console.log(data.msg);
           this.notificationserivice.alertSucceess(data.msg);
-
+          this. userId = "",
+         this.password="",
+         this.SelectRole="Select Reciver Role"
         }
         else {
           //console.log("Something went wrong");
-          console.log(data.msg);
+         // console.log(data.msg);
           this.notificationserivice.alertDanger(data.msg);
         }
       });
@@ -62,16 +74,26 @@ export class ChangePasswordComponent implements OnInit {
   }
 
   valuechange(newValue) {
-    // this.userDetectFlag = false;
+    this.userDetectFlag = false;
     console.log(newValue);
-    this.userServiceservice.findUser({ userId: newValue }).subscribe(data => {
-      if (data.data.length) {
-        this.notificationserivice.alertInfo("User found " + data.data[0].FirstName + " " + data.data[0].LastName);
-        this.role = data.data[0].role;
-        console.log(this.role);
-        this.userDetectFlag = true;
-      }
-    });
+    if(this.role = "guardian"){
+      this.userServiceservice.getgurdiandetails({ userId: newValue }).subscribe(data => {
+        if (data.data.length) {
+          this.notificationserivice.alertInfo("User found " + data.data[0].FirstName + " " + data.data[0].LastName);
+          console.log(this.role);
+          this.userDetectFlag = true;
+        }
+      });
+    }
+    else{
+      this.userServiceservice.findUser({ userId: newValue }).subscribe(data => {
+        if (data.data.length) {
+          this.notificationserivice.alertInfo("User found " + data.data[0].FirstName + " " + data.data[0].LastName);
+          console.log(this.role);
+          this.userDetectFlag = true;
+        }
+      });
+    }
   }
 
 }

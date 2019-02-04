@@ -53,6 +53,13 @@ export class UserServiceService {
     .pipe(map(res => res.json()));
   }
 
+  updateUserProfile(data){ 
+    let headers = new Headers();
+    headers.append('Cotent-type','application/json');
+    return this.http.post(hostAddress+'/users/updateUserProfile',data,{headers: headers}) //http://localhost:3000/
+    .pipe(map(res => res.json()));
+  }
+
   getgurdiandetails(data){ 
     let headers = new Headers();
     headers.append('Cotent-type','application/json');

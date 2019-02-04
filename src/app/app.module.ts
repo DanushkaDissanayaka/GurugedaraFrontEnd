@@ -64,7 +64,7 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    
+
     
     LoginComponent,
     RegisterComponent,

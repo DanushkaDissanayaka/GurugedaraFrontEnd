@@ -56,7 +56,7 @@ export class UserServiceService {
   changepassword(data){ 
     let headers = new Headers();
     headers.append('Cotent-type','application/json');
-    return this.http.post(hostAddress+'/users/getstudentFromGuardian',data,{headers: headers}) //http://localhost:3000/
+    return this.http.post(hostAddress+'/users/changeUserpasswordAdmin',data,{headers: headers}) //http://localhost:3000/
     .pipe(map(res => res.json()));
   }
 

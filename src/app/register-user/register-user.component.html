@@ -20,7 +20,7 @@
                       <div class="ripple-container"></div>
                     </a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item" *ngIf="adminflag">
                     <a mat-button class="nav-link" href="#settings" data-toggle="tab" (click)="change(role3)">
                       <i class="material-icons">cloud</i> Addmin
                       <div class="ripple-container"></div>

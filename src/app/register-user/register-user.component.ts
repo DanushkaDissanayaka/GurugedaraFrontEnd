@@ -16,8 +16,14 @@ export class RegisterUserComponent implements OnInit {
   role3:string = "admin"
     userlist:any[]
     role:string
+    adminflag:boolean=false
+    userrole:string
 
   ngOnInit() {
+    this.userrole = localStorage.getItem("role")
+    if(this.userrole == "admin"){
+      this.adminflag = true;
+    }
     this.getuserbyRole(this.role1);
     this.role = this.role1;
   }

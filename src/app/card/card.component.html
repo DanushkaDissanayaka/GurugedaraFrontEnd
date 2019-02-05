@@ -1,3 +1,82 @@
-<p>
-  card works!
-</p>
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title ">Assigh card For Student</h4>
+            <p class="card-category"> </p>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Student's Index" name="StudentID" [(ngModel)]="StudentID" disabled>
+                </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Card index" name="cardID" [(ngModel)]="cardID">
+                </mat-form-field>
+              </div>
+              <button type="button" class="btn btn-warning" (click)="onSubmit()">Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div col=row>
+      <div class="col-md-12">
+        <div class="card card-plain">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title mt-0"> List of {{role}}</h4>
+            <p class="card-category"> Here is our all {{role}} list</p>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead class="">
+                  <th>
+
+                  </th>
+                  <th>
+                    ID
+                  </th>
+                  <th>
+                    Name
+                  </th>
+                  <th>
+                    ContactNo
+                  </th>
+                  <th>
+                    Address
+                  </th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let el of userlist; let i = index">
+                    <td>
+                      {{i}}
+                    </td>
+                    <td>
+                      {{el.UserID}}
+                    </td>
+                    <td>
+                      {{el.FirstName}} {{el.LastName}}
+                    </td>
+                    <td>
+                      {{el.ContactNo}}
+                    </td>
+                    <td>
+                      {{el.AddNo}} {{el.AddStreet}} {{el.AddCity}}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

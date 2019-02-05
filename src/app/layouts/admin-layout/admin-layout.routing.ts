@@ -49,7 +49,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'EnrollStudent',     component: EnrollStudentComponent },
     { path: 'SendMessage', component:SendMessageComponent},
     { path: 'ChangePassword', component:ChangePasswordComponent},
-    { path: 'card', component:ChangePasswordComponent}
+    { path: 'card', component:CardComponent}
     
 
 

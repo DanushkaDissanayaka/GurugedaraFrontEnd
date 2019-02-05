@@ -144,7 +144,22 @@ export class AddclassComponent implements OnInit {
     this.classservice.addClass(data).subscribe(result => {
       if (result.success == true) {
         // console.log(result.msg);
-        this.notificationservice.alertInfo(result.msg);
+         this.notificationservice.alertInfo(result.msg);
+         this.ClassID=""
+         this.subjectID=""
+         this.locationID=""
+         this.teacherID=""
+         this.dateOfWeek=""
+         this.halfFee=""
+         this.fullFee=""
+         this.startTime=""
+         this.endTime=""
+         this.description=""
+         this.Title=""
+
+
+
+        
       }
       else {
         // console.log(result.msg);

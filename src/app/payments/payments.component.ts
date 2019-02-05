@@ -25,13 +25,21 @@ export class PaymentsComponent implements OnInit {
     { id: 10, name: "November" },
     { id: 11, name: "december" },
   ];
+  year = [
+    { id: 2015, value: "2015" },
+    { id: 2016, value: "2016" },
+    { id: 2017, value: "2017" },
+    { id: 2018, value: "2018" },
+    { id: 2019, value: "2019" },
+  ];
 
   backMonth : any
+  backYear : any
   classTitle: any
   studentName: any
   userid: string = "S100"
   guardianid: string = "G100"
-  role = "guardian"
+  role = "student"
   gurdianDetected:boolean = false;
 
   dropDownTitle = "Class Title"
@@ -65,12 +73,13 @@ export class PaymentsComponent implements OnInit {
     }
   }
 
-  setDropDwonName(name : string){
-    this.dropdownYear = name
+  setDropDwonName(id : any,name : string){
+    this.dropdownYear = name;
+    this.backYear = id;
   }
   setDropDwonName2(id: string, value: string) {
     this.dropDownMonth = value;
-    this.backMonth = id;
+    this.backMonth = id+1;
 
   }
 
@@ -99,7 +108,7 @@ export class PaymentsComponent implements OnInit {
 
 }
 getPayment() {
-  this.classservice.getStudentPaymentDetails({ UserId: this.userid, ClassId: this.classId }).subscribe(result => {
+  this.classservice.getStudentPaymentDetails({ UserId: this.userid, ClassId: this.classId ,month: this.backMonth, year: this.backYear}).subscribe(result => {
     console.log(result);
     this.payment = result.data;
     console.log(this.payment);

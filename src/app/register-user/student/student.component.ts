@@ -89,15 +89,21 @@ export class StudentComponent implements OnInit {
       return false;
     }
 
-    if (this.LastName == undefined || ! this.FirstName.match("^[A-Za-z]+$")) {
-      console.log('Last name is required');
-      this.showNOtification ('First name is required and should be contained of alphabetic letters.');
-      return false;
-    }
+    // if (this.LastName == undefined || ! this.FirstName.match("^[A-Za-z]+$")) {
+    //   console.log('Last name is required');
+    //   this.showNOtification ('First name is required and should be contained of alphabetic letters.');
+    //   return false;
+    // }
 
     if (! this.MiddleName.match("^[A-Za-z]+$")) {
       console.log('Last name is required');
       this.showNOtification ('Middle name only can contain alphobetic letters.');
+      return false;
+    }
+
+    if (this.LastName == undefined || ! this.LastName.match("^[A-Za-z]+$")) {
+      console.log('Last name is required');
+      this.showNOtification ('Last name is required and should be contained of alphabetic letters.');
       return false;
     }
 
@@ -107,7 +113,7 @@ export class StudentComponent implements OnInit {
       return false;
     }
 
-    if (this.email == undefined || !this.email.match('^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$') ) {
+    if (this.email == undefined  ) {
       console.log('Email is required');
       this.showNOtification ('Email is required');
       return false;
@@ -191,6 +197,17 @@ export class StudentComponent implements OnInit {
   private resetAll() {
     this.FirstName = "";
     this.MiddleName = "";
+    this.LastName = "";
+    this.DOB = "";
+    this.email = "";
+    this.ContactNo = "";
+    this.password = "";
+    this.repassword = "";
+    this.AddStreet = "";
+    this.AddCity = "";
+    this.AddNo = "";
+    this.School = "";
+
     // ....
   }
 

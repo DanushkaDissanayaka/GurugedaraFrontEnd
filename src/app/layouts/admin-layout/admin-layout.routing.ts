@@ -22,6 +22,7 @@ import { EnrollStudentComponent } from '../../enroll-student/enroll-student.comp
 import { SendMessageComponent } from '../../send-message/send-message.component';
 import { UnEnrollComponent } from '../../enroll-student/un-enroll/un-enroll.component';
 import { ChangePasswordComponent } from '../../change-password/change-password.component';
+import { CardComponent } from '../../card/card.component';
 import { EditPaymentsComponent } from '../../enter-payments/edit-payments/edit-payments.component';
 
 
@@ -47,7 +48,8 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'EnterPayments',     component: EnterPaymentsComponent },
     { path: 'EnrollStudent',     component: EnrollStudentComponent },
     { path: 'SendMessage', component:SendMessageComponent},
-    { path: 'ChangePassword', component:ChangePasswordComponent}
+    { path: 'ChangePassword', component:ChangePasswordComponent},
+    { path: 'card', component:ChangePasswordComponent}
     
 
 

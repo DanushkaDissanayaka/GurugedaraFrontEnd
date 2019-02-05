@@ -38,14 +38,7 @@ export class NotificationsComponent implements OnInit {
       this.notification = data.data;
     });
 
-    // this.notification = [
-    //   { title: "0itle", message: "this is the message fot this notification", type: 'assignment' },
-    //   { title: "Title", message: "this is the message fot this notification", type: 'assignment' },
-    // ]
-    // this.message = [
-    //   { title: "Title", message: "this is the message fot this notification" },
-    //   { title: "Title", message: "this is the message fot this notification" },
-    // ]
+  
 
     const data1 = {
       userId: this.userId
@@ -64,7 +57,4 @@ export class NotificationsComponent implements OnInit {
   
 
 
-
-
-
-}
+  }

@@ -16,7 +16,7 @@ export class AttendanceComponent implements OnInit {
   public backYear;
   userid: string;
   guardianid: string;
-  role: string ;
+  role: string;
   gurdianDetected: boolean = false;
   attendance: any
 
@@ -30,11 +30,11 @@ export class AttendanceComponent implements OnInit {
   year: any
 
   Year = [
-    { id:2015, value:"2015"},
-    { id:2016, value:"2016"},
-    { id:2017, value:"2017"},
-    { id:2018, value:"2018"},
-    { id:2019, value:"2019"},
+    { id: 2015, value: "2015" },
+    { id: 2016, value: "2016" },
+    { id: 2017, value: "2017" },
+    { id: 2018, value: "2018" },
+    { id: 2019, value: "2019" },
   ];
 
   month = [
@@ -78,13 +78,14 @@ export class AttendanceComponent implements OnInit {
 
   //calling to service file
 
-  setDropDwonName(name) {
+  setDropDwonName(id, name) {
     this.dropDownname = name;
+    this.backYear = id;
   }
 
   setDropDwonName2(id: string, value: string) {
     this.dropDownMonth = value;
-    this.backMonth = id+1;
+    this.backMonth = id + 1;
 
   }
 
@@ -114,7 +115,7 @@ export class AttendanceComponent implements OnInit {
   }
 
   getAttendance() {
-    this.classservice.getStudentAttendanceDetails({ UserId: this.userid, ClassId: this.classId , month: this.backMonth , year:this.backYear}).subscribe(result => {
+    this.classservice.getStudentAttendanceDetails({ UserId: this.userid, ClassId: this.classId, month: this.backMonth, year: this.backYear }).subscribe(result => {
       console.log(result);
       this.attendance = result.data;
       console.log(this.attendance);

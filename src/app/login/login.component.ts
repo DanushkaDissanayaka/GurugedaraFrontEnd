@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import {Router} from '@angular/router';
+import {NotificationsService} from '../services/notifications.service'
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit {
 constructor(
 private authService:AuthService,
 private router : Router,
+private notificatioService:NotificationsService
 //private toastr: ToastrService
 ) { }
 
@@ -33,11 +35,13 @@ this.authService.authendicateUser(user).subscribe(data =>{
     //console.log(data.token);
     //this.toastr.info('you are now login');
     console.log("you are now login");
+    this.notificatioService.alertInfo("you are now login")
     this.router.navigate(['/dashboard'])
   }
   else{
     //this.toastr.error(data.msg);
     console.log(data.msg);
+    this.notificatioService.alertDanger(data.msg)
     this.router.navigate(['/login'])
   }
   

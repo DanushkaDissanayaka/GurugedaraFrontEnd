@@ -65,7 +65,7 @@ import { EditPaymentsComponent } from './enter-payments/edit-payments/edit-payme
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    
+
     
     LoginComponent,
     RegisterComponent,

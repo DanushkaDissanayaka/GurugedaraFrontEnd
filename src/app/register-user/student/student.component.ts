@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ValidateService } from '../../Services/validate.service';
 import { UserServiceService } from '../../Services/user-service.service';
 import { NotificationsService } from '../../Services/notifications.service';
+import { EmailValidator } from '@angular/forms';
 //import { from } from 'rxjs';
 
 @Component({
@@ -82,15 +83,21 @@ export class StudentComponent implements OnInit {
 
    
     // Required Fields
-    if (this.FirstName == undefined ) {
+    if (this.FirstName == undefined || ! this.FirstName.match("^[A-Za-z]+$")) {
       console.log('First name is required');
-      this.showNOtification ('First name is required');
+      this.showNOtification ('First name is required and should be contained of alphabetic letters.');
       return false;
     }
 
-    if (this.LastName == undefined) {
+    if (this.LastName == undefined || ! this.FirstName.match("^[A-Za-z]+$")) {
       console.log('Last name is required');
-      this.showNOtification ('Last name is required');
+      this.showNOtification ('First name is required and should be contained of alphabetic letters.');
+      return false;
+    }
+
+    if (! this.MiddleName.match("^[A-Za-z]+$")) {
+      console.log('Last name is required');
+      this.showNOtification ('Middle name only can contain alphobetic letters.');
       return false;
     }
 
@@ -100,13 +107,13 @@ export class StudentComponent implements OnInit {
       return false;
     }
 
-    if (this.email == undefined ) {
+    if (this.email == undefined || !this.email.match('^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$') ) {
       console.log('Email is required');
       this.showNOtification ('Email is required');
       return false;
     }
 
-    if (this.ContactNo == undefined ) {
+    if (this.ContactNo == undefined ||!this.ContactNo.match('^0\d{2}-\d{7}$')  ) {
       console.log('Contact number is required');
       this.showNOtification ('Contact number is required');
       return false;
@@ -164,6 +171,9 @@ export class StudentComponent implements OnInit {
         //console.log("your now registerd");
         console.log(data.msg);
         this.notificationserivice.showNotification('top','right',data.msg,1);
+
+        // reset all input fields
+        this.resetAll();
       }
       else {
         //console.log("Something went wrong");
@@ -176,6 +186,12 @@ export class StudentComponent implements OnInit {
 
   showNOtification(msg){
     this.notificationserivice.showNotification('top','right',msg,2)
+  }
+
+  private resetAll() {
+    this.FirstName = "";
+    this.MiddleName = "";
+    // ....
   }
 
 }

@@ -41,6 +41,20 @@ SendMessage(data){
     return this.http.post( hostAddress +'/msg/message',data,{headers: headers}) //http://localhost:3000/
       .pipe(map(res => res.json()));
 }
+messageinbox(data){
+  let headers = new Headers();
+    headers.append('Cotent-type','application/json');
+    return this.http.post( hostAddress +'/msg/inbox',data,{headers: headers}) //http://localhost:3000/
+      .pipe(map(res => res.json()));
+}
+
+
+messageoutbox(data){
+  let headers = new Headers();
+    headers.append('Cotent-type','application/json');
+    return this.http.post( hostAddress +'/msg/outbox',data,{headers: headers}) //http://localhost:3000/
+      .pipe(map(res => res.json()));
+}
 
 
 

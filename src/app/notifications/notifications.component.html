@@ -2,8 +2,8 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-header card-header-warning">
-                <h3 class="card-title">Notifications and Message</h3>
-                <p class="card-category">Your inbox</p>
+                <h3 class="card-title">Notifications</h3>
+                <p class="card-category">Your Notifications</p>
             </div>
             <div class="card-body">
                 <div class="row">
@@ -16,26 +16,64 @@
                                 <i class="material-icons">close</i>
                             </button>
                             <span data-notify="title">
+                                <h4>From {{el.Title}}</h4>
+                                <h5>{{el.title}}</h5>
+                                <p>{{el.atDate}} {{el.atTime}}</p>
+                            </span>
+                            <span data-notify="message">
+                                {{el.msg}}
+                            </span>
+                        </div>
+                    </div>
+
+               
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-warning">
+                <h3 class="card-title">Inbox and out box</h3>
+                <p class="card-category">Your inbox and out box</p>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4 class="card-title">Inbox</h4>
+
+                        <div class="alert alert-info alert-with-icon" data-notify="container" *ngFor="let el of message1">
+                            <i class="material-icons" data-notify="icon">notification_important</i>
+                            <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <i class="material-icons">close</i>
+                            </button>
+                            <span data-notify="title">
                                 <h4>{{el.title}}</h4>
+                                <h4>From {{el.senderUserId}}</h4>
                             </span>
                             <span data-notify="message">
                                 {{el.message}}
                             </span>
                         </div>
                     </div>
-
                     <div class="col-md-6">
-                        <h4 class="card-title">Message</h4>
-                        <div class="alert alert-success alert-with-icon" *ngFor="let el of message">
+                        <h4 class="card-title">Outbox</h4>
+                        <div class="alert alert-success alert-with-icon" *ngFor="let el of message2">
                             <i class="material-icons" data-notify="icon">message</i>
                             <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <i class="material-icons">close</i>
                             </button>
                             <span data-notify="title">
-                                <h4>{{el.title}}</h4>
+                                <h4>To {{el.resiverUserId}}</h4>
+                                <h5>{{el.title}}</h5>
+                                <h5>{{el.Title}}</h5>
+                                
                             </span>
                             <span data-notify="message">
-                                {{el.message}}
+                                {{el.msg}}
                             </span>
                         </div>
                     </div>

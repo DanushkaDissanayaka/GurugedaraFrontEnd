@@ -7,6 +7,7 @@ export class NotificationsService {
 
   constructor() { }
 
+  
   showNotification(from, align,message,type) {
     const state = ['', 'info', 'success', 'warning', 'danger'];
 

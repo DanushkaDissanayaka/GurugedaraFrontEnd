@@ -82,6 +82,20 @@ export class AddclassComponent implements OnInit {
       Title: this.Title
     }
     console.log(data);
+
+    if (!this.validateservice.validateUndefined(data.Title)) {
+      this.notificationservice.alertWarning("Please enter class Title")
+      return false;
+    }
+    if (!this.validateservice.validateUndefined(data.teacherID)) {
+      this.notificationservice.alertWarning("Please enter teacherID")
+      return false;
+    }
+   
+
+
+
+    
     if (!this.validateservice.validateUndefined(data.ClassID)) {
       this.notificationservice.alertWarning("Please enter valide class Id")
       return false;
@@ -120,6 +134,10 @@ export class AddclassComponent implements OnInit {
     }
     if (!this.validateservice.validateUndefined(data.endTime)) {
       this.notificationservice.alertWarning("Please Enter title for clase")
+      return false;
+    }
+    if (!this.validateservice.validateUndefined(data.description)) {
+      this.notificationservice.alertWarning("Please enter description")
       return false;
     }
 

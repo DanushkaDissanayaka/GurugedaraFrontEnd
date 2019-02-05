@@ -73,6 +73,13 @@ export class UserServiceService {
     .pipe(map(res => res.json()));
   }
 
+  getallusersFromRole(data){ 
+    let headers = new Headers();
+    headers.append('Cotent-type','application/json');
+    return this.http.post(hostAddress+'/users//getAllStudentDetailsFromRole',data,{headers: headers}) //http://localhost:3000/
+    .pipe(map(res => res.json()));
+  }
+
   
 }
 

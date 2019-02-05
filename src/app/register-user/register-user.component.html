@@ -9,19 +9,19 @@
                 <span class="nav-tabs-title">Register</span>
                 <ul class="nav nav-tabs" data-tabs="tabs">
                   <li class="nav-item">
-                    <a mat-button class="nav-link active" href="#profile" data-toggle="tab">
+                    <a mat-button class="nav-link active" href="#profile" data-toggle="tab" (click)="change(role1)">
                       <i class="material-icons">bug_report</i> Student
                       <div class="ripple-container"></div>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a mat-button class="nav-link" href="#messages" data-toggle="tab">
+                    <a mat-button class="nav-link" href="#messages" data-toggle="tab" (click)="change(role2)">
                       <i class="material-icons">code</i> Employee
                       <div class="ripple-container"></div>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a mat-button class="nav-link" href="#settings" data-toggle="tab">
+                    <a mat-button class="nav-link" href="#settings" data-toggle="tab" (click)="change(role3)">
                       <i class="material-icons">cloud</i> Addmin
                       <div class="ripple-container"></div>
                     </a>
@@ -50,13 +50,16 @@
     <div class="col-md-12">
       <div class="card card-plain">
         <div class="card-header card-header-danger">
-          <h4 class="card-title mt-0"> Table on Plain Background</h4>
-          <p class="card-category"> Here is a subtitle for this table</p>
+          <h4 class="card-title mt-0"> List of {{role}}</h4>
+          <p class="card-category"> Here is our all {{role}} list</p>
         </div>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table table-hover">
               <thead class="">
+                <th>
+                  
+                </th>
                 <th>
                   ID
                 </th>
@@ -64,116 +67,28 @@
                   Name
                 </th>
                 <th>
-                  Country
+                  ContactNo
                 </th>
                 <th>
-                  City
-                </th>
-                <th>
-                  Salary
+                  Address
                 </th>
               </thead>
               <tbody>
-                <tr>
+                <tr *ngFor="let el of userlist; let i = index">
                   <td>
-                    1
+                    {{i}}
                   </td>
                   <td>
-                    Dakota Rice
+                    {{el.UserID}}
                   </td>
                   <td>
-                    Niger
+                    {{el.FirstName}} {{el.LastName}}
                   </td>
                   <td>
-                    Oud-Turnhout
+                    {{el.ContactNo}}
                   </td>
                   <td>
-                    $36,738
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    2
-                  </td>
-                  <td>
-                    Minerva Hooper
-                  </td>
-                  <td>
-                    Curaçao
-                  </td>
-                  <td>
-                    Sinaai-Waas
-                  </td>
-                  <td>
-                    $23,789
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    3
-                  </td>
-                  <td>
-                    Sage Rodriguez
-                  </td>
-                  <td>
-                    Netherlands
-                  </td>
-                  <td>
-                    Baileux
-                  </td>
-                  <td>
-                    $56,142
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    4
-                  </td>
-                  <td>
-                    Philip Chaney
-                  </td>
-                  <td>
-                    Korea, South
-                  </td>
-                  <td>
-                    Overland Park
-                  </td>
-                  <td>
-                    $38,735
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    5
-                  </td>
-                  <td>
-                    Doris Greene
-                  </td>
-                  <td>
-                    Malawi
-                  </td>
-                  <td>
-                    Feldkirchen in Kärnten
-                  </td>
-                  <td>
-                    $63,542
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    6
-                  </td>
-                  <td>
-                    Mason Porter
-                  </td>
-                  <td>
-                    Chile
-                  </td>
-                  <td>
-                    Gloucester
-                  </td>
-                  <td>
-                    $78,615
+                    {{el.AddNo}} {{el.AddStreet}} {{el.AddCity}}
                   </td>
                 </tr>
               </tbody>
@@ -182,8 +97,6 @@
         </div>
       </div>
     </div>
-
-
     <!---Main Div end here-->
   </div>
 </div>

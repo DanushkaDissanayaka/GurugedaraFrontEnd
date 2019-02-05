@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ValidateService } from '../../Services/validate.service';
 import { UserServiceService } from '../../Services/user-service.service';
 import { NotificationsService } from '../../Services/notifications.service';
-import { from } from 'rxjs';
+//import { from } from 'rxjs';
 
 @Component({
   selector: 'app-admin',
@@ -52,18 +52,41 @@ export class AdminComponent implements OnInit {
 
 
     // Required Fields
-    if (this.FirstName == undefined || this.LastName == undefined) {
-      console.log('First name and Last name is required');
-      this.showNOtification ('First name and Last name is required');
+    if (this.FirstName == undefined || ! this.FirstName.match("^[A-Za-z]+$")) {
+      console.log('First name is required');
+      this.showNOtification ('First name is required and should be contained of alphabetic letters.');
       return false;
     }
 
-    if (!this.validateService.validateRegister(user)) {
-      //console.log('Please fill in all fields');
-      console.log('Please fill in all fields');
-      this.showNOtification ('Please fill in all fields');
+    if (! this.MiddleName.match("^[A-Za-z]+$")) {
+      console.log('Last name is required');
+      this.showNOtification ('Middle name only can contain alphobetic letters.');
       return false;
     }
+
+    if (this.LastName == undefined || ! this.LastName.match("^[A-Za-z]+$")) {
+      console.log('Last name is required');
+      this.showNOtification ('First name is required and should be contained of alphabetic letters.');
+      return false;
+    }
+
+    // if (!this.validateService.validateRegister(user)) {
+    //   //console.log('Please fill in all fields');
+    //   console.log('Please fill in all fields');
+    //   this.showNOtification ('Please fill in all fields');
+    //   return false;
+    // }
+
+    if (this.DOB == undefined ) {
+      console.log('Birthday is required');
+      this.showNOtification ('Birthday is required');
+      return false;
+    }
+
+    if (this.email == undefined || !this.email.match('^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$') ) {
+      console.log('Email is required');
+      this.showNOtification ('Email is required');
+      return false;
 
     // validate email
 
@@ -99,4 +122,5 @@ export class AdminComponent implements OnInit {
     this.notificationserivice.showNotification('top','right',msg,3)
   }
 
+}
 }

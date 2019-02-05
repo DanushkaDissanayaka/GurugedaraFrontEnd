@@ -54,7 +54,7 @@
                   </th>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let el of userlist; let i = index">
+                  <tr *ngFor="let el of userlist; let i = index" (click) =addcard()>
                     <td>
                       {{i}}
                     </td>

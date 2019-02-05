@@ -11,5 +11,7 @@ export class CardComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  addcard(index:string){
+    console.log("works");
+  }
 }

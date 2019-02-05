@@ -37,6 +37,7 @@ export class AddNotificationComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.userId = localStorage.getItem("userId")
     this.getAllClassID()
     this.getTypeID()
 

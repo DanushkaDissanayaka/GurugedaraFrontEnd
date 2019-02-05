@@ -80,6 +80,13 @@ export class UserServiceService {
     .pipe(map(res => res.json()));
   }
 
+  getstudentWithoutcard(data){ 
+    let headers = new Headers();
+    headers.append('Cotent-type','application/json');
+    return this.http.post(hostAddress+'/card/studentWithoutCard',data,{headers: headers}) //http://localhost:3000/
+    .pipe(map(res => res.json()));
+  }
+
   
 }
 

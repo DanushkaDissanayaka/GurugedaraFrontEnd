@@ -108,10 +108,10 @@ export class AddclassComponent implements OnInit {
       this.notificationservice.alertWarning("Please select location")
       return false;
     }
-    if (!this.validateservice.validateUndefined(data.teacherID)) {
-      this.notificationservice.alertWarning("Please enter teacher Id")
-      return false;
-    }
+    // if (!this.validateservice.validateUndefined(data.teacherID)) {
+    //   this.notificationservice.alertWarning("Please enter teacher Id")
+    //   return false;
+    // }
     if (!this.validateservice.validateUndefined(data.dateOfWeek)) {
       this.notificationservice.alertWarning("Please select Date")
       return false;
@@ -132,14 +132,14 @@ export class AddclassComponent implements OnInit {
       this.notificationservice.alertWarning("Please decide class end time")
       return false;
     }
-    if (!this.validateservice.validateUndefined(data.endTime)) {
-      this.notificationservice.alertWarning("Please Enter title for clase")
-      return false;
-    }
-    if (!this.validateservice.validateUndefined(data.description)) {
-      this.notificationservice.alertWarning("Please enter description")
-      return false;
-    }
+    // if (!this.validateservice.validateUndefined(data.endTime)) {
+    //   this.notificationservice.alertWarning("Please Enter title for clase")
+    //   return false;
+    // }
+    // if (!this.validateservice.validateUndefined(data.description)) {
+    //   this.notificationservice.alertWarning("Please enter description")
+    //   return false;
+    // }
 
     this.classservice.addClass(data).subscribe(result => {
       if (result.success == true) {
